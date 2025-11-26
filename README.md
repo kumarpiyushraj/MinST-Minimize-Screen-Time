@@ -348,40 +348,39 @@ DataSaveWorker (runs every 24 hours):
 
 ### **Technical Stack**
 
-```
-mermaid
-flowchart TD
-  subgraph Presentation["Presentation Layer"]
-    F1[Fragments / Activities]
-    VM[ViewModels]
-    ADP[Adapters]
-  end
+┌─────────────────────────────────────────────────────┐
+│ Presentation Layer                                   │
+│ ┌────────────┐ ┌────────────┐ ┌────────────┐         │
+│ │ Fragments  │ │ ViewModels │ │ Adapters   │         │
+│ └────────────┘ └────────────┘ └────────────┘         │
+└─────────────────────────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────┐
+│ Domain Layer                                        │
+│ ┌────────────┐ ┌────────────┐ ┌────────────┐         │
+│ │ Use Cases  │ │ Repositories││ Models     │         │
+│ └────────────┘ └────────────┘ └────────────┘         │
+└─────────────────────────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────┐
+│ Data Layer                                          │
+│ ┌────────────┐ ┌────────────┐ ┌────────────┐         │
+│ │ Room/DB    │ │ Retrofit   │ │ SharedPrefs │        │
+│ └────────────┘ └────────────┘ └────────────┘         │
+└─────────────────────────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────┐
+│ Service Layer                                       │
+│ ┌──────────────────────────────────────────────┐    │
+│ │ Foreground Monitor Service                    │    │
+│ │ Accessibility Self-Healing                    │    │
+│ │ Usage Collector Worker (WorkManager)          │    │
+│ └──────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────┘
 
-  subgraph Domain["Domain Layer"]
-    UC[Use Cases]
-    REPO[Repositories]
-    MDL[Models]
-  end
-
-  subgraph Data["Data Layer"]
-    ROOM[Room / SQLite]
-    API[Retrofit (optional)]
-    PREF[SharedPreferences (backup)]
-  end
-
-  subgraph Service["Service Layer"]
-    SVC[Foreground Monitoring Service]
-    ACC[Accessibility Self-Healing Service]
-    WORK[Usage Collector Worker (WorkManager)]
-  end
-
-  F1 --> VM --> UC --> REPO --> ROOM
-  REPO --> API
-  REPO --> PREF
-  SVC --> REPO
-  WORK --> REPO
-  ACC --> SVC
-```
 
 ### **Design Patterns**
 
