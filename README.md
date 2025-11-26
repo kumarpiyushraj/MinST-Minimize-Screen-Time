@@ -381,7 +381,7 @@ DataSaveWorker (runs every 24 hours):
 │ └──────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────┘
 
-
+```
 ### **Design Patterns**
 
 - **MVVM (Model-View-ViewModel)**: Separation of concerns for testability
