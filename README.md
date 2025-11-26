@@ -48,7 +48,7 @@ A robust background service architecture with WorkManager ensures continuous mon
 
 <table>
   <tr>
-    <td align="center" colspan="2">
+    <td align="center" width="50%">
       <img src="app/src/main/res/screenshots/Picture_4.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
       <br/><strong>Main Dashboard</strong><br/>
       Quick access to reminders, usage, settings & info.
@@ -74,7 +74,7 @@ A robust background service architecture with WorkManager ensures continuous mon
   </tr>
 
   <tr>
-    <td align="center" width="50%">
+    <td align="center" colspan="2">
       <img src="app/src/main/res/screenshots/Picture_2.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
       <br/><strong>App Insights & Analytics</strong><br/>
       View daily usage, streaks, trends & detailed stats.
