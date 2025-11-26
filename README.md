@@ -48,38 +48,36 @@ A robust background service architecture with WorkManager ensures continuous mon
 
 <table>
   <tr>
+    <td align="center" colspan="2">
+      <img src="app/src/main/res/screenshots/Picture_4.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
+      <br/><strong>Main Dashboard</strong><br/>
+      Quick access to reminders, usage, settings & info.
+    </td>
     <td align="center" width="50%">
       <img src="app/src/main/res/screenshots/Picture_3.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><b>Daily Usage Timeline</b><br/>
+      <br/><strong>Daily Usage Timeline</strong><br/>
       Real-time screen time with per-app breakdown.
     </td>
+  </tr>
 
-  <td align="center" width="50%">
+  <tr>
+    <td align="center" width="50%">
       <img src="app/src/main/res/screenshots/Picture_1.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><b>Break Reminder Settings</b><br/>
+      <br/><strong>Break Reminder Settings</strong><br/>
       Configure interval, snooze duration & quick presets.
+    </td>
+    <td align="center" width="50%">
+      <img src="app/src/main/res/screenshots/Picture_5.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
+      <br/><strong>Individual App Limits</strong><br/>
+      Set per-app usage limits with color-coded indicators.
     </td>
   </tr>
 
   <tr>
     <td align="center" width="50%">
       <img src="app/src/main/res/screenshots/Picture_2.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><b>App Insights & Analytics</b><br/>
+      <br/><strong>App Insights & Analytics</strong><br/>
       View daily usage, streaks, trends & detailed stats.
-    </td>
-
-  <td align="center" width="50%">
-      <img src="app/src/main/res/screenshots/Picture_5.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><b>Individual App Limits</b><br/>
-      Set per-app usage limits with color-coded indicators.
-    </td>
-  </tr>
-
-  <tr>
-    <td align="center" colspan="2">
-      <img src="app/src/main/res/screenshots/Picture_4.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><b>Main Dashboard</b><br/>
-      Quick access to reminders, usage, settings & info.
     </td>
   </tr>
 </table>
