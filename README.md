@@ -349,41 +349,38 @@ DataSaveWorker (runs every 24 hours):
 ### **Technical Stack**
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                   Presentation Layer                 │
-│  ┌────────────┐  ┌────────────┐  ┌────────────┐   │
-│  │  Fragments │  │ ViewModels │  │  Adapters  │   │
-│  └────────────┘  └────────────┘  └────────────┘   │
-└─────────────────────────────────────────────────────┘
-                        │
-                        ▼
-┌─────────────────────────────────────────────────────┐
-│                   Domain Layer                       │
-│  ┌────────────┐  ┌────────────┐  ┌────────────┐   │
-│  │  Use Cases │  │ Repositories│ │   Models   │   │
-│  └────────────┘  └────────────┘  └────────────┘   │
-└─────────────────────────────────────────────────────┘
-                        │
-                        ▼
-┌─────────────────────────────────────────────────────┐
-│                    Data Layer                        │
-│  ┌────────────┐  ┌────────────┐  ┌────────────┐   │
-│  │    Room    │  │  Retrofit  │  │SharedPrefs │   │
-│  │  Database  │  │    API     │  │  (Backup)  │   │
-│  └────────────┘  └────────────┘  └────────────┘   │
-└─────────────────────────────────────────────────────┘
-                        │
-                        ▼
-┌─────────────────────────────────────────────────────┐
-│                  Service Layer                       │
-│  ┌──────────────────────────────────────────────┐  │
-│  │        Monitoring Foreground Service         │  │
-│  ├──────────────────────────────────────────────┤  │
-│  │       Self-Healing Accessibility Service     │  │
-│  ├──────────────────────────────────────────────┤  │
-│  │      Usage Collector Background Worker       │  │
-│  └──────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────┘
+mermaid
+flowchart TD
+  subgraph Presentation["Presentation Layer"]
+    F1[Fragments / Activities]
+    VM[ViewModels]
+    ADP[Adapters]
+  end
+
+  subgraph Domain["Domain Layer"]
+    UC[Use Cases]
+    REPO[Repositories]
+    MDL[Models]
+  end
+
+  subgraph Data["Data Layer"]
+    ROOM[Room / SQLite]
+    API[Retrofit (optional)]
+    PREF[SharedPreferences (backup)]
+  end
+
+  subgraph Service["Service Layer"]
+    SVC[Foreground Monitoring Service]
+    ACC[Accessibility Self-Healing Service]
+    WORK[Usage Collector Worker (WorkManager)]
+  end
+
+  F1 --> VM --> UC --> REPO --> ROOM
+  REPO --> API
+  REPO --> PREF
+  SVC --> REPO
+  WORK --> REPO
+  ACC --> SVC
 ```
 
 ### **Design Patterns**
