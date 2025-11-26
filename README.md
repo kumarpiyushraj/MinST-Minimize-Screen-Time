@@ -49,43 +49,37 @@ A robust background service architecture with WorkManager ensures continuous mon
 <table>
   <tr>
     <td align="center" width="50%">
-
-      <img src="app/src/main/res/screenshots/Picture_3.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
-      <b>Daily Usage Timeline</b><br/>
-      Real-time screen time with per-app breakdown, showing apps used in the last hour and earlier today.
-
+      <img src="app/src/main/res/screenshots/Picture_3.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
+      <br/><b>Daily Usage Timeline</b><br/>
+      Real-time screen time with per-app breakdown.
     </td>
-    <td align="center" width="50%">
 
-      <img src="app/src/main/res/screenshots/Picture_1.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
-      <b>Break Reminder Settings</b><br/>
-      Configure reminder interval, snooze duration, quick presets (20/50 min) and overlay behavior.
-
+  <td align="center" width="50%">
+      <img src="app/src/main/res/screenshots/Picture_1.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
+      <br/><b>Break Reminder Settings</b><br/>
+      Configure interval, snooze duration & quick presets.
     </td>
   </tr>
+
   <tr>
     <td align="center" width="50%">
-
-      <img src="app/src/main/res/screenshots/Picture_2.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
-      <b>App Insights & Analytics</b><br/>
-      Detailed per-app view with daily usage, launch count, trends vs yesterday/week, streaks and charts.
-
+      <img src="app/src/main/res/screenshots/Picture_2.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
+      <br/><b>App Insights & Analytics</b><br/>
+      View daily usage, streaks, trends & detailed stats.
     </td>
-    <td align="center" width="50%">
 
-      <img src="app/src/main/res/screenshots/Picture_5.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
-      <b>Individual App Limits</b><br/>
-      Grid of apps with usage vs goal, color-coded progress and quick access to set or adjust limits.
-
+  <td align="center" width="50%">
+      <img src="app/src/main/res/screenshots/Picture_5.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
+      <br/><b>Individual App Limits</b><br/>
+      Set per-app usage limits with color-coded indicators.
     </td>
   </tr>
+
   <tr>
     <td align="center" colspan="2">
-
-      <img src="app/src/main/res/screenshots/Picture_4.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
-      <b>Main Dashboard</b><br/>
-      Central control to enable/disable reminders and navigate to Usage, Settings and more.
-
+      <img src="app/src/main/res/screenshots/Picture_4.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
+      <br/><b>Main Dashboard</b><br/>
+      Quick access to reminders, usage, settings & info.
     </td>
   </tr>
 </table>
