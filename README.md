@@ -12,7 +12,7 @@
 
 *Reclaim your focus. Stay in control. Live mindfully.*
 
-[Features](#-features) • [How It Works](#-how-it-works) • [Installation](#-installation) • [Architecture](#-architecture) • [Contributing](#-contributing)
+[Features](#-features) • [How It Works](#-smart-break-reminder-system) • [Installation](#-installation) • [Architecture](#-architecture) • [Contributing](#-contributing)
 
 </div>
 
@@ -341,7 +341,7 @@ DataSaveWorker (runs every 24 hours):
 │  ├─ Gets aggregated map from UsageStatsManager  
 │  └─ Batch inserts into daily_usage table
 └─ Uses REPLACE conflict strategy (upsert)
-
+```
 ---
 
 ## 🏗️ Architecture
@@ -381,7 +381,7 @@ DataSaveWorker (runs every 24 hours):
 │ └──────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────┘
 
-```
+
 ### **Design Patterns**
 
 - **MVVM (Model-View-ViewModel)**: Separation of concerns for testability
