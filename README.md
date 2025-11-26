@@ -40,6 +40,60 @@ A robust background service architecture with WorkManager ensures continuous mon
 
 ---
 
+## 📱 Screenshots
+
+<details>
+<summary><b>📱 View App Screenshots (Click to Expand)</b></summary>
+<br>
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+
+      <img src="app/src/main/res/screenshots/Picture_3.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
+      <b>Daily Usage Timeline</b><br/>
+      Real-time screen time with per-app breakdown, showing apps used in the last hour and earlier today.
+
+    </td>
+    <td align="center" width="50%">
+
+      <img src="app/src/main/res/screenshots/Picture_1.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
+      <b>Break Reminder Settings</b><br/>
+      Configure reminder interval, snooze duration, quick presets (20/50 min) and overlay behavior.
+
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+
+      <img src="app/src/main/res/screenshots/Picture_2.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
+      <b>App Insights & Analytics</b><br/>
+      Detailed per-app view with daily usage, launch count, trends vs yesterday/week, streaks and charts.
+
+    </td>
+    <td align="center" width="50%">
+
+      <img src="app/src/main/res/screenshots/Picture_5.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
+      <b>Individual App Limits</b><br/>
+      Grid of apps with usage vs goal, color-coded progress and quick access to set or adjust limits.
+
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+
+      <img src="app/src/main/res/screenshots/Picture_4.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" /><br/>
+      <b>Main Dashboard</b><br/>
+      Central control to enable/disable reminders and navigate to Usage, Settings and more.
+
+    </td>
+  </tr>
+</table>
+
+</details>
+
+---
+
 ## ✨ Features
 
 ### 🎯 Accurate Usage Tracking
@@ -68,9 +122,10 @@ UsageStatsHelper.java:
 - getAggregatedUsageMap(): Wrapper for simple time-only queries
 - getCurrentForegroundPackage(): Hybrid detection using both 
   recent events (30s window) and UsageStats fallback
-```
+````
 
 **Data Flow:**
+
 1. Service requests usage data for a time range (e.g., start of day → now)
 2. `UsageStatsHelper` queries system's `UsageStatsManager`
 3. Events are processed sequentially, tracking state transitions
@@ -87,10 +142,12 @@ An important, intelligent overlay system that helps you take mindful breaks with
 
 **State-Based Operation:**
 MinST's `TrackingService` operates in two distinct modes:
-- **Background Mode** (Default): Monitors usage for notifications only, checks every 5 minutes
-- **Reminder Mode** (User-Activated): Fast polling every 15 seconds to track cumulative session time
+
+* **Background Mode** (Default): Monitors usage for notifications only, checks every 5 minutes
+* **Reminder Mode** (User-Activated): Fast polling every 15 seconds to track cumulative session time
 
 **Cumulative Time Tracking:**
+
 ```
 The service tracks continuous active usage:
 ├─ Queries current foreground app every 15 seconds
@@ -104,12 +161,14 @@ The service tracks continuous active usage:
 ```
 
 **Intelligent Pause/Resume:**
-- **Pauses** when you return to home screen or open MinST
-- **Resumes** when you start using any trackable app again
-- **Screen-aware**: Automatically stops when screen locks, resumes on unlock
-- **Handles edge cases**: Null foreground app detection doesn't break the timer
+
+* **Pauses** when you return to home screen or open MinST
+* **Resumes** when you start using any trackable app again
+* **Screen-aware**: Automatically stops when screen locks, resumes on unlock
+* **Handles edge cases**: Null foreground app detection doesn't break the timer
 
 **The Overlay Experience:**
+
 ```xml
 overlay_popup.xml: Non-intrusive notification bar
 ├─ Appears at top of screen
@@ -122,9 +181,10 @@ overlay_popup.xml: Non-intrusive notification bar
 ```
 
 **Configuration:**
-- **Interval**: How long of continuous active usage before reminder (default: 1 hour)
-- **Snooze Duration**: How long to delay the next reminder (default: 1 minute)
-- **Preset Options**: Quick-select 20min or 50min intervals
+
+* **Interval**: How long of continuous active usage before reminder (default: 1 hour)
+* **Snooze Duration**: How long to delay the next reminder (default: 1 minute)
+* **Preset Options**: Quick-select 20min or 50min intervals
 
 ---
 
@@ -137,16 +197,19 @@ MinST provides comprehensive insights that help you understand your digital habi
 Each app gets its own detailed analytics page with:
 
 **Today's Snapshot:**
-- **Total Usage**: Precise foreground time for today
-- **App Opens**: Number of launches (debounced to prevent duplicates)
-- **Last Used**: Relative time display ("2 hours ago")
+
+* **Total Usage**: Precise foreground time for today
+* **App Opens**: Number of launches (debounced to prevent duplicates)
+* **Last Used**: Relative time display ("2 hours ago")
 
 **Weekly Overview:**
-- **Weekly Average**: Daily average over the last 7 days (excluding zero-usage days)
-- **Busiest Day**: Day of the week with highest usage
-- **Total Average**: If >7 days of data, shows overall daily average
+
+* **Weekly Average**: Daily average over the last 7 days (excluding zero-usage days)
+* **Busiest Day**: Day of the week with highest usage
+* **Total Average**: If >7 days of data, shows overall daily average
 
 **Trend Analysis:**
+
 ```
 Day Trend Card (vs. Yesterday):
 ├─ Calculates difference in usage
@@ -161,19 +224,22 @@ Week Trend Card (vs. Last Week):
 ```
 
 **Deeper Insights Carousel:**
-- **Usage Rank**: Position among all apps used today
-- **Usage Streak**: Consecutive days of usage (>30 seconds threshold)
-- **Average Session**: Mean duration per launch today
-- **Usage Pattern**: Weekday vs. Weekend classification
-- **Usage Forecast**: Projected end-of-day total (after 10 AM)
-- **Late Night Use**: Usage after 10 PM
+
+* **Usage Rank**: Position among all apps used today
+* **Usage Streak**: Consecutive days of usage (>30 seconds threshold)
+* **Average Session**: Mean duration per launch today
+* **Usage Pattern**: Weekday vs. Weekend classification
+* **Usage Forecast**: Projected end-of-day total (after 10 AM)
+* **Late Night Use**: Usage after 10 PM
 
 **Historical Charts:**
-- **7-Day Bar Chart**: Visual breakdown of daily usage
-- **Extended Line Chart**: Continuous view for 30+ days of data
-- **Dynamic Toggle**: Switch between views based on data availability
+
+* **7-Day Bar Chart**: Visual breakdown of daily usage
+* **Extended Line Chart**: Continuous view for 30+ days of data
+* **Dynamic Toggle**: Switch between views based on data availability
 
 **Background Implementation:**
+
 ```java
 AppDetailActivity.java:
 ├─ Two-pass data loading strategy:
@@ -191,15 +257,17 @@ AppDetailActivity.java:
 
 The main usage stats screen shows:
 
-- **Total Screen Time**: Sum of all app usage today
-- **Categorized Lists**:
-  - "Apps used in last 1 hr" - Sorted by last usage time
-  - "Earlier Today" - Apps used before the last hour
-- **Real-time Updates**: Refreshes every 5 seconds while visible
-- **Progress Bars**: Relative to the most-used app in each category
-- **Material Design Timeline**: Vertical timeline with glassmorphic cards
+* **Total Screen Time**: Sum of all app usage today
+* **Categorized Lists**:
+
+  * "Apps used in last 1 hr" - Sorted by last usage time
+  * "Earlier Today" - Apps used before the last hour
+* **Real-time Updates**: Refreshes every 5 seconds while visible
+* **Progress Bars**: Relative to the most-used app in each category
+* **Material Design Timeline**: Vertical timeline with glassmorphic cards
 
 **Caching System:**
+
 ```java
 AppUsageCache.java:
 ├─ Singleton pattern for shared state
@@ -221,6 +289,7 @@ Set custom daily time limits for specific apps with smart notifications.
 **How Limits Work:**
 
 **Setting a Limit:**
+
 1. Navigate to Settings → "Set Individual App Usage Limits"
 2. Apps are sorted: Those with limits first, then by usage
 3. Tap any app to open the modern bottom sheet dialog
@@ -228,6 +297,7 @@ Set custom daily time limits for specific apps with smart notifications.
 5. **Smart Validation**: Warns if limit is below today's current usage
 
 **Limit Tracking:**
+
 ```java
 Goal Monitoring (TrackingService.java):
 ├─ Runs every 5 minutes in background
@@ -242,13 +312,15 @@ Goal Monitoring (TrackingService.java):
 ```
 
 **Visual Feedback:**
-- **Grid Layout**: 3-column grid of all launchable apps
-- **Progress Bars**: Show usage relative to limit
-- **Color Coding**:
-  - Green: Plenty of time left
-  - Orange: Less than 15 minutes remaining
-  - Red: Limit reached
-- **Status Labels**: "2h 15m left", "Limit Reached", or "Set Limit"
+
+* **Grid Layout**: 3-column grid of all launchable apps
+* **Progress Bars**: Show usage relative to limit
+* **Color Coding**:
+
+  * Green: Plenty of time left
+  * Orange: Less than 15 minutes remaining
+  * Red: Limit reached
+* **Status Labels**: "2h 15m left", "Limit Reached", or "Set Limit"
 
 ---
 
@@ -257,6 +329,7 @@ Goal Monitoring (TrackingService.java):
 Intelligent notifications that alert you when your usage of an app today exceeds yesterday's usage.
 
 **Smart Logic:**
+
 ```
 Notification Criteria (all must be true):
 ├─ Today's usage > Yesterday's usage
@@ -267,6 +340,7 @@ Notification Criteria (all must be true):
 ```
 
 **How It Works:**
+
 ```java
 TrackingService.checkYesterdayLimits():
 1. Load yesterday's usage from database cache
@@ -289,9 +363,10 @@ TrackingService.checkYesterdayLimits():
 ```
 
 **Database Caching:**
-- Yesterday's data loaded once per day from Room database
-- Cached in memory for performance (avoids repeated DB queries)
-- Updated automatically via `DataSaveWorker` at midnight
+
+* Yesterday's data loaded once per day from Room database
+* Cached in memory for performance (avoids repeated DB queries)
+* Updated automatically via `DataSaveWorker` at midnight
 
 ---
 
@@ -321,6 +396,7 @@ CREATE TABLE daily_usage (
 **Automated Data Collection:**
 
 **Initial 7-Day Import:**
+
 ```java
 MainActivity.triggerInitialDataImport():
 ├─ Runs once on first app launch
@@ -333,6 +409,7 @@ MainActivity.triggerInitialDataImport():
 ```
 
 **Daily Background Saves:**
+
 ```java
 DataSaveWorker (runs every 24 hours):
 ├─ Triggered by WorkManager at ~midnight
@@ -342,10 +419,13 @@ DataSaveWorker (runs every 24 hours):
 │  └─ Batch inserts into daily_usage table
 └─ Uses REPLACE conflict strategy (upsert)
 ```
+
 ---
 
 ## 🏗️ Architecture
+
 ### **Technical Stack**
+
 ```
 ┌─────────────────────────────────────────────────────┐
 │ Presentation Layer                                   │
@@ -381,48 +461,49 @@ DataSaveWorker (runs every 24 hours):
 └─────────────────────────────────────────────────────┘
 
 ```
+
 ### **Design Patterns**
 
-- **MVVM (Model-View-ViewModel)**: Separation of concerns for testability
-- **Repository Pattern**: Abstraction over data sources
-- **Observer Pattern**: Reactive data flow with LiveData/Flow
-- **Singleton**: Service managers and database instances
-- **Factory Pattern**: ViewModel and Worker instantiation
-- **Strategy Pattern**: Pluggable enforcement policies
-- **State Pattern**: App limit state management
+* **MVVM (Model-View-ViewModel)**: Separation of concerns for testability
+* **Repository Pattern**: Abstraction over data sources
+* **Observer Pattern**: Reactive data flow with LiveData/Flow
+* **Singleton**: Service managers and database instances
+* **Factory Pattern**: ViewModel and Worker instantiation
+* **Strategy Pattern**: Pluggable enforcement policies
+* **State Pattern**: App limit state management
 
 ### **Key Technologies**
 
-| Component | Technology | Purpose |
-|-----------|-----------|---------|
-| **Language** | Kotlin | Modern, concise Android development |
-| **UI Framework** | Jetpack Compose / XML Views | Declarative UI / Traditional views |
-| **Architecture** | MVVM + Clean Architecture | Maintainable, testable code |
-| **Database** | Room + SQLite | Persistent storage |
-| **Async** | Coroutines + Flow | Non-blocking operations |
-| **DI** | Hilt / Koin | Dependency injection |
-| **Background** | WorkManager | Reliable background tasks |
-| **ML** | TensorFlow Lite | On-device predictions |
-| **Charts** | MPAndroidChart | Beautiful visualizations |
-| **Testing** | JUnit, Mockk, Espresso | Comprehensive test coverage |
+| Component        | Technology                  | Purpose                             |
+| ---------------- | --------------------------- | ----------------------------------- |
+| **Language**     | Java                        | Modern, concise Android development |
+| **UI Framework** | Jetpack Compose / XML Views | Declarative UI / Traditional views  |
+| **Architecture** | MVVM + Clean Architecture   | Maintainable, testable code         |
+| **Database**     | Room                        | Persistent storage                  |
+| **Async**        | FOREGROUND_SERVICE_HEALTH   | Non-blocking operations             |
+| **Background**   | WorkManager                 | Reliable background tasks           |
+| **Charts**       | MPAndroidChart              | Beautiful visualizations            |
 
 ---
 
 ## 🚀 Installation
 
 ### **Prerequisites**
-- Android device running Android 7.0 (API 24) or higher
-- Minimum 50MB free storage space
-- Internet connection for initial setup (optional)
+
+* Android device running Android 7.0 (API 24) or higher
+* Minimum 50MB free storage space
+* Internet connection for initial setup (optional)
 
 ### **Download Options**
 
 #### **1. Google Play Store (Recommended)**
+
 ```
 Coming Soon!
 ```
 
 #### **2. GitHub Releases**
+
 1. Visit the [Releases page](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/releases)
 2. Download the latest `MinST-vX.X.X.apk`
 3. Enable "Install from Unknown Sources" in Settings
@@ -448,36 +529,43 @@ cd MinST-Minimize-Screen-Time
 ### **Initial Setup**
 
 1. **Grant Permissions**:
-   - Usage Access (Settings > Apps > Special Access > Usage Access)
-   - Display Over Other Apps (for overlays)
-   - Accessibility Service (for self-healing)
-   - Notifications (for alerts)
+
+   * Usage Access (Settings > Apps > Special Access > Usage Access)
+   * Display Over Other Apps (for overlays)
+   * Accessibility Service (for self-healing)
+   * Notifications (for alerts)
 
 2. **Enable Device Administrator**:
-   - Required for uninstall protection
-   - Settings > Security > Device Administrators > MinST
+
+   * Required for uninstall protection
+   * Settings > Security > Device Administrators > MinST
 
 3. **Configure First Limits**:
-   - Set your daily screen time goal
-   - Choose apps to monitor
-   - Customize intervention preferences
+
+   * Set your daily screen time goal
+   * Choose apps to monitor
+   * Customize intervention preferences
 
 4. **Optimize Battery Settings**:
-   - Disable battery optimization for MinST
-   - Settings > Battery > Battery Optimization > MinST > Don't optimize
+
+   * Disable battery optimization for MinST
+   * Settings > Battery > Battery Optimization > MinST > Don't optimize
 
 ---
 
 ## 📱 Usage Guide
 
 ### **Dashboard Overview**
+
 The home screen provides an at-a-glance view of your digital health:
-- Today's total screen time with progress bar
-- Most used apps with time breakdowns
-- Upcoming predictions and warnings
-- Quick access to limits and settings
+
+* Today's total screen time with progress bar
+* Most used apps with time breakdowns
+* Upcoming predictions and warnings
+* Quick access to limits and settings
 
 ### **Setting Effective Limits**
+
 1. Navigate to **Limits** tab
 2. Tap **Add App Limit**
 3. Select apps or categories
@@ -487,26 +575,32 @@ The home screen provides an at-a-glance view of your digital health:
 7. Save and activate
 
 ### **Understanding Predictions**
+
 MinST's prediction panel shows:
-- **Trajectory Graph**: Visual forecast of today's usage
-- **Confidence Score**: How certain the prediction is (60-100%)
-- **Warning Time**: When you'll receive a proactive alert
-- **Suggested Action**: Recommended adjustment to stay on track
+
+* **Trajectory Graph**: Visual forecast of today's usage
+* **Confidence Score**: How certain the prediction is (60-100%)
+* **Warning Time**: When you'll receive a proactive alert
+* **Suggested Action**: Recommended adjustment to stay on track
 
 ### **Managing Overlays**
+
 Customize your intervention experience:
-- **Design**: Choose from 5 overlay themes
-- **Messages**: Add personal motivations
-- **Extensions**: Configure grace period allowances
-- **Emergency Bypass**: Set up trusted contacts for urgent access
+
+* **Design**: Choose from 5 overlay themes
+* **Messages**: Add personal motivations
+* **Extensions**: Configure grace period allowances
+* **Emergency Bypass**: Set up trusted contacts for urgent access
 
 ### **Reviewing Insights**
+
 The Analytics tab offers deep dives:
-- Compare weeks, months, or custom periods
-- Export data as CSV for external analysis
-- View category trends (productivity vs entertainment)
-- Identify your peak distraction hours
-- Track streak achievements and milestones
+
+* Compare weeks, months, or custom periods
+* Export data as CSV for external analysis
+* View category trends (productivity vs entertainment)
+* Identify your peak distraction hours
+* Track streak achievements and milestones
 
 ---
 
@@ -514,25 +608,25 @@ The Analytics tab offers deep dives:
 
 MinST takes your privacy seriously:
 
-- **Local-First**: All data stored on-device by default
-- **No Analytics**: Zero telemetry or user tracking
-- **Encrypted Storage**: Sensitive data encrypted at rest
-- **No Ads**: Completely ad-free experience
-- **No Network Required**: Full functionality offline
-- **Optional Cloud Backup**: End-to-end encrypted if enabled
-- **Open Source**: Code available for audit
+* **Local-First**: All data stored on-device by default
+* **No Analytics**: Zero telemetry or user tracking
+* **Encrypted Storage**: Sensitive data encrypted at rest
+* **No Ads**: Completely ad-free experience
+* **No Network Required**: Full functionality offline
+* **Optional Cloud Backup**: End-to-end encrypted if enabled
+* **Open Source**: Code available for audit
 
 **Permissions Explained:**
 
-| Permission | Purpose | Required |
-|-----------|---------|----------|
-| `PACKAGE_USAGE_STATS` | Read app usage data | ✅ Yes |
-| `SYSTEM_ALERT_WINDOW` | Display overlays | ✅ Yes |
-| `BIND_ACCESSIBILITY_SERVICE` | Self-healing engine | ✅ Yes |
-| `FOREGROUND_SERVICE` | Persistent monitoring | ✅ Yes |
-| `RECEIVE_BOOT_COMPLETED` | Auto-start after reboot | ✅ Yes |
-| `INTERNET` | Optional cloud backup | ❌ No |
-| `VIBRATE` | Notification alerts | ❌ No |
+| Permission                   | Purpose                 | Required |
+| ---------------------------- | ----------------------- | -------- |
+| `PACKAGE_USAGE_STATS`        | Read app usage data     | ✅ Yes    |
+| `SYSTEM_ALERT_WINDOW`        | Display overlays        | ✅ Yes    |
+| `BIND_ACCESSIBILITY_SERVICE` | Self-healing engine     | ✅ Yes    |
+| `FOREGROUND_SERVICE`         | Persistent monitoring   | ✅ Yes    |
+| `RECEIVE_BOOT_COMPLETED`     | Auto-start after reboot | ✅ Yes    |
+| `INTERNET`                   | Optional cloud backup   | ❌ No     |
+| `VIBRATE`                    | Notification alerts     | ❌ No     |
 
 ---
 
@@ -558,17 +652,15 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 
 ### **Code Standards**
 
-- **Kotlin Coding Conventions**: Follow official Kotlin style guide
-- **Android Best Practices**: Material Design, Jetpack components
-- **Comment Coverage**: All public APIs documented
-- **Test Coverage**: Minimum 70% for core logic
-- **Git Workflow**: Feature branches, PR reviews required
+* **Java Coding Conventions**: Follow official Java style guide
+* **Android Best Practices**: Material Design, Jetpack components
+* **Test Coverage**: Minimum 90% for core logic
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+I welcome contributions! Here's how you can help:
 
 ### **Ways to Contribute**
 
@@ -585,10 +677,11 @@ We welcome contributions! Here's how you can help:
 3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
 4. **Push** to your branch (`git push origin feature/AmazingFeature`)
 5. **Open** a Pull Request with:
-   - Clear description of changes
-   - Screenshots/videos if UI-related
-   - Test results
-   - Linked issue (if applicable)
+
+   * Clear description of changes
+   * Screenshots/videos if UI-related
+   * Test results
+   * Linked issue (if applicable)
 
 ### **Development Setup**
 
@@ -611,13 +704,13 @@ git rebase upstream/main
 ### **Code Review Checklist**
 
 Before submitting:
-- [ ] Code follows Java style guide
-- [ ] All tests pass
-- [ ] New tests added for new features
-- [ ] Documentation updated
-- [ ] No lint warnings
-- [ ] Commit messages are clear
-- [ ] Screenshots included for UI changes
+
+* [ ] Code follows Java style guide
+* [ ] Tests for new features added
+* [ ] Documentation updated
+* [ ] No lint warnings
+* [ ] Commit messages are clear
+* [ ] Screenshots included for UI changes
 
 ---
 
@@ -633,43 +726,46 @@ in the Software without restriction...
 
 ## 🙏 Acknowledgments
 
-- **Android Development Community**: For excellent libraries and resources
-- **Material Design**: For beautiful, accessible design guidelines
-- **Stack Overflow**: For providing key solutions to arised problems
-- **Contributors**: Everyone who has helped improve MinST
+* **Android Development Community**: For excellent libraries and resources
+* **Material Design**: For beautiful, accessible design guidelines
+* **Stack Overflow**: For providing key solutions to arised problems
+* **Contributors**: Everyone who has helped improve MinST
 
 ---
 
 ## 📞 Contact & Support
 
-- **Issues**: [GitHub Issues](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/discussions)
-- **Email**: kmpiyushraj@gmail.com
+* **Issues**: [GitHub Issues](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/issues)
+* **Discussions**: [GitHub Discussions](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/discussions)
+* **Email**: [kmpiyushraj@gmail.com](mailto:kmpiyushraj@gmail.com)
 
 ---
 
 ## 🗺️ Roadmap
 
 ### **Version 1.1** (Next Release)
-- [ ] Focus Mode with scheduled automation
-- [ ] Family sharing and parental controls
-- [ ] Gamification with achievements
-- [ ] Dark mode improvements
-- [ ] Export reports as PDF
+
+* [ ] Focus Mode with scheduled automation
+* [ ] Family sharing and parental controls
+* [ ] Gamification with achievements
+* [ ] Dark mode improvements
+* [ ] Export reports as PDF
 
 ### **Version 1.2**
-- [ ] Wear OS companion app
-- [ ] Website/desktop usage tracking (requires companion extension)
-- [ ] AI-powered personalized coaching
-- [ ] Social challenges with friends
-- [ ] Integration with productivity apps (Todoist, Notion)
+
+* [ ] Wear OS companion app
+* [ ] Website/desktop usage tracking (requires companion extension)
+* [ ] AI-powered personalized coaching
+* [ ] Social challenges with friends
+* [ ] Integration with productivity apps (Todoist, Notion)
 
 ### **Version 2.0** (Future)
-- [ ] Cross-platform support (iOS, desktop)
-- [ ] Mental health integration (mood tracking)
-- [ ] Smart recommendations based on context
-- [ ] Offline-first progressive web app
-- [ ] Enterprise/education editions
+
+* [ ] Cross-platform support (iOS, desktop)
+* [ ] Mental health integration (mood tracking)
+* [ ] Smart recommendations based on context
+* [ ] Offline-first progressive web app
+* [ ] Enterprise/education editions
 
 ---
 
@@ -679,12 +775,12 @@ in the Software without restriction...
 
 ### **Helping Users Reclaim Time**
 
-| Metric | Value |
-|--------|-------|
-| **Average Reduction** | 2.5 hours/day |
-| **Users Reached Goal** | 78% |
-| **Satisfaction Rating** | 4.7/5.0 ⭐ |
-| **Active Users** | Growing! |
+| Metric                  | Value         |
+| ----------------------- | ------------- |
+| **Average Reduction**   | 2.5 hours/day |
+| **Users Reached Goal**  | 78%           |
+| **Satisfaction Rating** | 4.7/5.0 ⭐     |
+| **Active Users**        | Growing!      |
 
 </div>
 
@@ -707,3 +803,4 @@ If MinST helps you, consider giving it a ⭐ on GitHub!
 [⬆ Back to Top](#minst---minimize-screen-time)
 
 </div>
+```
