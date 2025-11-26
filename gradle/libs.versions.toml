@@ -1,0 +1,38 @@
+[versions]
+agp = "8.13.0"
+circularprogressbar = "3.1.0"
+flexbox = "3.0.0"
+googleMaterial = "1.10.0"
+junit = "4.13.2"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
+appcompat = "1.7.1"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+materialVersion = "1.5.0"
+mpandroidchart = "v3.1.0"
+numberPicker = "2.4.13"
+roomRuntime = "2.6.1"
+workRuntimeKtx = "2.10.4"
+
+[libraries]
+circularprogressbar = { module = "com.mikhaellopez:circularprogressbar", version.ref = "circularprogressbar" }
+flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+material-v1100 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
+material-v150 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
+number-picker = { module = "com.shawnlin:number-picker", version.ref = "numberPicker" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

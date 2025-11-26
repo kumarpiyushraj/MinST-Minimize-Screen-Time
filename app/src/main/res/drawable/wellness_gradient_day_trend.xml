@@ -1,0 +1,9 @@
+<!-- res/drawable/bg_day_trend.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="#6200EE"
+        android:endColor="#BB86FC"
+        android:angle="45"/>
+    <corners android:radius="12dp"/>
+</shape>

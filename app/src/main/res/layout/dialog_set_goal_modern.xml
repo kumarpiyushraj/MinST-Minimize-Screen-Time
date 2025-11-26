@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvGoalDialogTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Daily Limit"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pontano_sans_medium"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:textColor="?attr/title_number_picker"
+            android:background="@drawable/bg_title_highlight"
+            android:padding="8dp"
+            android:letterSpacing="0.02"
+            android:elevation="2dp"
+            tools:text="Set Limit for WhatsApp"/>
+
+        <TextView
+            android:id="@+id/tvUsedTodayInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/sora"
+            android:layout_marginBottom="16dp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_gravity="center_horizontal"
+            tools:text="Used today: 25 min"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/sora"
+                    android:textStyle="bold"
+                    android:text="Hours"
+                    android:letterSpacing="0.01"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="16sp" />
+
+                <NumberPicker
+                    android:id="@+id/npHoursGoal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/NumberPicker" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minutes"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/sora"
+                    android:textColor="?attr/colorOnSurface"
+                    android:layout_marginBottom="8dp"
+                    android:letterSpacing="0.01"
+                    android:textStyle="bold" />
+
+                <NumberPicker
+                    android:id="@+id/npMinutesGoal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/NumberPicker" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvLimitWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Heads up: Usage today is already over this limit."
+            android:textColor="@color/warning_orange"
+            android:textSize="13sp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sora"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRemoveLimit"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Remove Limit"
+                android:fontFamily="@font/carlito_bold"
+                android:layout_marginEnd="8dp"
+                android:textColor="?attr/colorOnSurface"
+                app:strokeColor="?attr/colorOutline" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSetLimit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set Limit"
+                android:fontFamily="@font/carlito_bold"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

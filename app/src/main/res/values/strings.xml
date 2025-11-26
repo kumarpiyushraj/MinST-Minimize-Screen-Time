@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MinST</string>
+    <string name="more_options">options\n</string>
+    <string name="app_icon">app_icon\n</string>
+    <string name="total_screen_time_today">Total Screen Time Today</string>
+    <string name="usage">Usage</string>
+    <string name="snooze">Snooze</string>
+    <string name="current_settings">CURRENT SETTINGS</string>
+    <string name="label_total_avg_days">Total Average (%1$d days)</string>
+    <string name="button_all_days_text">Last %1$d Days</string>
+    <string name="dash">—</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sheet_background">#121212</color>
+    <color name="widget_background">#313131</color>
+    <color name="title_gradient_silver">#FFFFFF</color>
+    <color name="title_gradient_gold">#BDBDBD</color>
+    <color name="text_color_primary">#FFFFFF</color>
+    <color name="text_color_secondary">#BDBDBD</color>
+
+    <!-- Primary theme colors -->
+    <color name="colorPrimary">#BB86FC</color>
+    <color name="colorOnPrimary">#000000</color>
+    <color name="colorSecondary">#03DAC6</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorSurface">#121212</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+    <color name="colorOnSurfaceVariant">#B3B3B3</color>
+    <color name="colorTertiary">#03DAC6</color>
+    <color name="warning_red">#D50000</color>
+    <color name="button_background_dark_blue">#3F51B5</color>
+    <color name="card_background_light">#F3F4F6</color>
+
+    <!-- Dialog text colors -->
+<!--    <color name="dialogTitleColor">#FFFFFF</color>   &lt;!&ndash; Bright for dark background &ndash;&gt;-->
+<!--    <color name="dialogTextColor">#CCCCCC</color>    &lt;!&ndash; Slightly muted but readable &ndash;&gt;-->
+
+    <color name="dialogIconUsageTime">#BB86FC</color>      <!-- Light purple -->
+    <color name="dialogIconAppOpens">#82B1FF</color>       <!-- Light blue -->
+    <color name="dialogIconAverages">#69F0AE</color>       <!-- Light green -->
+
+    <color name="dialogTitleColor">#FFFFFF</color>         <!-- White for title -->
+    <color name="dialogTextColor">#B0B0B0</color>          <!-- Gray for body -->
+    <!-- Primary Text -->
+    <color name="textColorPrimary">#FFFFFF</color> <!-- White for main titles -->
+    <!-- Secondary Text -->
+    <color name="textColorSecondary">#B0BEC5</color> <!-- Softer light gray for details -->
+
+    <!-- Icon Colors -->
+    <color name="colorGreen">#81C784</color>
+    <color name="colorBlue">#64B5F6</color>
+    <color name="colorOrange">#FFB74D</color>
+    <color name="colorRed">#E57373</color>
+    <color name="colorPurple">#9C27B0</color>
+    <color name="colorTeal">#4DB6AC</color>
+    <color name="colorDeepOrange">#FF8A65</color>
+
+        <color name="background_light">#FAFAFA</color>
+        <color name="gray_dark">#757575</color>
+        <color name="gray_light">#E0E0E0</color>
+        <color name="highlight_blue">#2196F3</color>
+        <color name="highlight_red">#F44336</color>
+
+    <color name="stroke_color">#1F000000</color>
+    <color name="warning_orange">#FF9800</color>
+</resources>

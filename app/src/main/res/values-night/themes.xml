@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MinST1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="colorSurface">#121212</item>
+        <item name="colorOnSurface">@android:color/white</item>
+        <item name="colorOnSurfaceVariant">#B0B0B0</item>
+        <item name="colorOutline">#2C2C2C</item>
+        <item name="colorPrimary">@color/brand_purple_primary</item>
+        <item name="title_number_picker">@color/grey_300</item>
+        <item name="colorPrimaryContainer">@color/purple_800</item>
+
+    </style>
+</resources>

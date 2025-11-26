@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NumberPicker">
+        <item name="android:textColorPrimary">?attr/colorOnSurface</item>
+        <item name="android:colorControlNormal">?attr/colorOnSurfaceVariant</item>
+        <item name="android:colorControlActivated">?attr/colorPrimary</item>
+        <item name="android:background">?attr/colorSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <!-- Rounded background -->
+        <item name="bottomSheetStyle">@style/Widget.App.CustomBottomSheet</item>
+    </style>
+
+    <style name="Widget.App.CustomBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+</resources>

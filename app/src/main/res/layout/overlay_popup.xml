@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/overlay_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    app:cardBackgroundColor="#E6212121"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    android:theme="@style/Theme.MinST1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ivReminderIcon"-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:layout_marginEnd="12dp"-->
+<!--                android:contentDescription="Reminder Icon"-->
+<!--                android:src="@drawable/ic_info" />-->
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Give yourself a mindful break"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibSnooze"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/icon_circle_background"
+                android:contentDescription="Snooze"
+                android:src="@drawable/ic_snooze" />
+
+            <ImageButton
+                android:id="@+id/ibUsage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/icon_background_circle"
+                android:contentDescription="Usage"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_usage_stats" />
+
+            <ImageButton
+                android:id="@+id/ibClose"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/icon_circle_background"
+                android:contentDescription="Close"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_close" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressCountdown"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/popup_progress_bar" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,72 @@
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="12dp"
+    app:cardBackgroundColor="@color/white_alpha_50"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/stroke_color"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivInsightIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvInsightTitle"
+            app:tint="#11CB49"
+            tools:src="@drawable/ic_pattern" />
+
+        <TextView
+            android:id="@+id/tvInsightTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#6EBC00"
+            android:textSize="14sp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/ivInsightIcon"
+            app:layout_constraintTop_toTopOf="@id/ivInsightIcon"
+            app:layout_constraintBottom_toBottomOf="@id/ivInsightIcon"
+            tools:text="Usage Pattern" />
+
+        <TextView
+            android:id="@+id/tvInsightValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/sora"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textAlignment="textStart"
+            app:layout_constraintStart_toStartOf="@id/ivInsightIcon"
+            app:layout_constraintTop_toBottomOf="@id/tvInsightTitle"
+            tools:text="Weekend App" />
+
+        <TextView
+            android:id="@+id/tvInsightSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:textColor="#3A3A3A"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInsightValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Weekday vs. Weekend use"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
