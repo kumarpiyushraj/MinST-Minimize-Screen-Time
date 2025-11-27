@@ -2,381 +2,257 @@
 
 <div align="center">
 
-![MinST Logo](https://img.shields.io/badge/MinST-Digital%20Wellbeing-4CAF50?style=for-the-badge&logo=android&logoColor=white)
+![MinST Banner](app/src/main/res/screenshots/banner.png)
 
-**The ultimate digital wellbeing companion for Android that truly works.**
+**Your intelligent companion for mindful digital habits**
 
-[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://android.com)
-[![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg)](https://android-arsenal.com/api?level=24)
-[![Language](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.java.com)
+[![Platform](https://img.shields.io/badge/Platform-Android%207.0%2B-3DDC84?style=flat-square&logo=android)](https://developer.android.com)
+[![Language](https://img.shields.io/badge/Language-Java-007396?style=flat-square&logo=java)](https://www.java.com)
+[![Architecture](https://img.shields.io/badge/Architecture-MVVM-2196F3?style=flat-square)](https://developer.android.com/topic/architecture)
+[![Database](https://img.shields.io/badge/Database-Room-4CAF50?style=flat-square)](https://developer.android.com/training/data-storage/room)
 
-*Reclaim your focus. Stay in control. Live mindfully.*
+*Reclaim your focus • Stay in control • Live mindfully*
 
-[Features](#-features) • [How It Works](#-smart-break-reminder-system) • [Installation](#-installation) • [Architecture](#-architecture) • [Contributing](#-contributing)
+[Features](#-features) • [How It Works](#-how-it-works) • [Screenshots](#-screenshots) • [Installation](#-installation) • [Architecture](#-architecture) • [Contributing](#-contributing)
 
 </div>
 
 ---
 
-## 📖 Overview
+## 📖 About MinST
 
-MinST is a sophisticated digital wellbeing application that goes beyond basic screen time tracking. Built with precision using Android's native APIs, it provides accurate real-time monitoring, intelligent break reminders, and personalized usage insights to help you develop healthier digital habits.
+MinST (Minimize Screen Time) is a sophisticated digital wellbeing application that helps you build healthier relationships with your devices. Unlike basic screen time trackers, MinST provides **precision tracking**, **intelligent break reminders**, and **actionable insights** to genuinely transform your digital habits.
 
-Unlike apps that merely show statistics, MinST actively helps you stay mindful with a smart reminder system that monitors your active screen time and gently nudges you to take breaks—without being intrusive or annoying.
+### Why MinST?
 
-### Why MinST Stands Out
-
-**Precision Tracking**  
-MinST uses Android's `UsageStatsManager` API with a completely rewritten event processing engine that accurately tracks only your *active* screen time—when apps are truly in the foreground. Background activity, music playback, and system apps are intelligently filtered out for a true picture of your digital engagement.
-
-**Smart Break Reminders**  
-The optional break reminder system monitors your cumulative active usage and displays gentle, non-intrusive popup notifications at configurable intervals. The system intelligently pauses when you're on the home screen or using excluded apps, resuming only when you return to active app usage.
-
-**Comprehensive Insights**  
-Go beyond basic "time spent" metrics with deep analytics including usage streaks, busiest days, weekly trends, average session lengths, usage forecasts, and intelligent comparisons with historical data—all computed locally on your device.
-
-**Persistent Protection**  
-A robust background service architecture with WorkManager ensures continuous monitoring even after device restarts, with automatic recovery mechanisms that restart the service if it's terminated by the system.
-
----
-
-## 📱 Screenshots
-
-<details>
-<summary><b>📱 View App Screenshots (Click to Expand)</b></summary>
-<br>
-
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="app/src/main/res/screenshots/Picture_4.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><strong>Main Dashboard</strong><br/>
-      Quick access to reminders, usage, settings & info.
-    </td>
-    <td align="center" width="50%">
-      <img src="app/src/main/res/screenshots/Picture_3.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><strong>Daily Usage Timeline</strong><br/>
-      Real-time screen time with per-app breakdown.
-    </td>
-  </tr>
-
-  <tr>
-    <td align="center" width="50%">
-      <img src="app/src/main/res/screenshots/Picture_1.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><strong>Break Reminder Settings</strong><br/>
-      Configure interval, snooze duration & quick presets.
-    </td>
-    <td align="center" width="50%">
-      <img src="app/src/main/res/screenshots/Picture_5.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><strong>Individual App Limits</strong><br/>
-      Set per-app usage limits with color-coded indicators.
-    </td>
-  </tr>
-
-  <tr>
-    <td align="center" colspan="2">
-      <img src="app/src/main/res/screenshots/Picture_2.png" width="260" style="border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,0.20);" />
-      <br/><strong>App Insights & Analytics</strong><br/>
-      View daily usage, streaks, trends & detailed stats.
-    </td>
-  </tr>
-</table>
-
-</details>
+- **🎯 Precision Tracking**: Measures only active foreground time using Android's native `UsageStatsManager` API
+- **🔔 Smart Break Reminders**: Context-aware notifications that pause during home screen or when using MinST itself
+- **📊 Deep Analytics**: Comprehensive insights including usage trends, streaks, forecasts, and behavioral patterns
+- **🎨 Modern Design**: Beautiful Material Design 3 interface with glassmorphic effects and smooth animations
+- **🔒 Privacy First**: All data stored locally on your device with zero telemetry or tracking
 
 ---
 
 ## ✨ Features
 
-### 🎯 Accurate Usage Tracking
+### 1. **Accurate Real-Time Usage Tracking**
 
-MinST provides the most precise screen time measurement available on Android by directly processing usage events from the system.
+MinST employs a custom-built event processing engine that analyzes `UsageEvents` from Android's system APIs to calculate **precise foreground time**.
 
-**What Makes It Accurate:**
-- **Foreground-Only Tracking**: Only counts time when an app is actively visible on your screen
-- **Event-Based Processing**: Uses `UsageEvents.Event.MOVE_TO_FOREGROUND` and `MOVE_TO_BACKGROUND` events for millisecond-precision tracking
-- **Edge Case Handling**: Correctly calculates usage for apps that were active before/after the measurement window
-- **Launch Count Debouncing**: Implements a 30-second debounce to prevent quick app switches from inflating launch counts
-- **Real-Time Updates**: Live data refreshes every 5 seconds in the Usage Timeline view
-- **Smart Filtering**: Automatically excludes system apps, launchers, and MinST itself from totals
+<details>
+<summary><b>📐 Technical Details</b></summary>
 
-**Background Implementation:**
 ```java
-UsageStatsHelper.java:
-- getProcessedUsageStats(): Core event processing engine
-  ├─ Queries UsageEvents from UsageStatsManager
-  ├─ Maintains HashMap of app foreground entry times
-  ├─ Handles app switches with precise duration calculation
-  ├─ Accounts for apps active at window boundaries
-  └─ Returns ProcessedUsageStats with totalTimeInForeground, 
-     launchCount, and lastTimeUsed
+// Core tracking implementation in UsageStatsHelper.java
+public static HashMap<String, ProcessedUsageStats> getProcessedUsageStats(
+    Context context, long start, long end) {
+    
+    // Query raw usage events from the system
+    UsageEvents usageEvents = usm.queryEvents(start, end);
+    
+    // Process MOVE_TO_FOREGROUND and MOVE_TO_BACKGROUND events
+    // to calculate accurate foreground duration
+    while (usageEvents.hasNextEvent()) {
+        // Calculate time spent in each app
+        // Handle edge cases (apps active at window boundaries)
+        // Implement 30-second debounce for launch counting
+    }
+    
+    return usageStatsMap;
+}
+```
 
-- getAggregatedUsageMap(): Wrapper for simple time-only queries
-- getCurrentForegroundPackage(): Hybrid detection using both 
-  recent events (30s window) and UsageStats fallback
-````
+**Key Features:**
+- Only counts time when apps are **actively visible on screen**
+- Handles edge cases (apps active before/after measurement window)
+- 30-second debounce prevents inflated launch counts
+- Real-time updates every 5 seconds in Usage Timeline
+- Automatically filters out system apps and MinST itself
+
+</details>
+
+---
+
+### 2. **Intelligent Break Reminder System**
+
+A state-based overlay notification system that helps you take mindful breaks without being intrusive.
+
+<div align="center">
+
+```mermaid
+graph TD
+    A[TrackingService Started] --> B{Reminders Active?}
+    B -->|No| C[Background Mode<br/>5-min checks]
+    B -->|Yes| D[Fast Polling Mode<br/>15-sec checks]
+    D --> E{Get Foreground App}
+    E --> F{Is Ignored App?}
+    F -->|Yes<br/>Home/MinST| G[Timer Paused<br/>Time preserved]
+    F -->|No| H[Add Time to Session]
+    H --> I{Time ≥ Interval?}
+    I -->|No| D
+    I -->|Yes| J[Show Overlay]
+    J --> K[User Action]
+    K -->|Dismiss| L[Reset Timer]
+    K -->|Snooze| M[Pause for Snooze Duration]
+    K -->|View Stats| N[Open Usage Activity]
+    L --> D
+    M --> D
+    N --> D
+    G --> D
+```
+
+</div>
+
+**How It Works:**
+1. **Fast Polling (15s)**: When reminders are active, checks current foreground app every 15 seconds
+2. **Cumulative Timer**: Tracks total active usage across all non-ignored apps
+3. **Smart Pausing**: Timer pauses on home screen or when using MinST, preserves progress
+4. **Overlay Display**: Shows non-intrusive notification bar at configured interval (default: 1 hour)
+5. **User Actions**: Snooze (1 min default), View Stats, or Dismiss
+
+**Code Reference:**
+```java
+// TrackingService.java - Core timer logic
+private void updateOverlayTimer() {
+    String foregroundApp = UsageStatsHelper.getCurrentForegroundPackage(this);
+    
+    if (foregroundApp != null && !ignoredPackages.contains(foregroundApp)) {
+        long delta = System.currentTimeMillis() - lastCheckTimestamp;
+        cumulativeSessionTime += delta;
+        
+        if (cumulativeSessionTime >= Prefs.getInterval(this)) {
+            showOverlay(); // Display break reminder
+            cumulativeSessionTime = 0L;
+        }
+    }
+    // Timer pauses for ignored apps
+}
+```
+
+---
+
+### 3. **Comprehensive App Analytics**
+
+Each app gets a dedicated detail page with multi-dimensional insights.
+
+<table>
+<tr>
+<td width="50%">
+
+**📊 Today's Snapshot**
+- Total foreground usage
+- Launch count (debounced)
+- Last used timestamp
+
+**📈 Weekly Overview**
+- 7-day daily average
+- Busiest day identification
+- Total average (if >7 days data)
+
+</td>
+<td width="50%">
+
+**📉 Trend Analysis**
+- Day-over-day comparison
+- Week-over-week comparison
+- Color-coded indicators (↑ red, ↓ green)
+
+**🎯 Deeper Insights**
+- Usage rank among all apps
+- Consecutive usage streak
+- Average session length
+- Usage pattern (weekday/weekend)
+- End-of-day forecast (after 10 AM)
+- Late night usage (after 10 PM)
+
+</td>
+</tr>
+</table>
+
+**Visual Analytics:**
+- **7-Day Bar Chart**: Daily usage comparison
+- **30+ Day Line Chart**: Extended trend visualization
+- **Dynamic Toggle**: Switch between chart views based on data availability
+
+---
+
+### 4. **Individual App Limits**
+
+Set custom daily time limits for specific apps with real-time tracking and smart notifications.
+
+**Implementation Flow:**
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant UI as SetGoalsActivity
+    participant DB as Room Database
+    participant Service as TrackingService
+    participant System as Android System
+
+    User->>UI: Select app & set limit
+    UI->>DB: Save AppGoalEntity
+    Note over DB: dailyGoalMillis<br/>usageAtTimeOfSet
+    DB-->>UI: Limit saved
+    
+    loop Every 5 minutes
+        Service->>System: Query today's usage
+        System-->>Service: Usage data
+        Service->>DB: Load all goals
+        DB-->>Service: Goal list
+        Service->>Service: Compare usage vs limits
+        alt Limit exceeded
+            Service->>User: Send notification
+            Service->>DB: Mark as notified (today)
+        end
+    end
+```
+
+**Features:**
+- **Smart Validation**: Warns if limit is below current usage
+- **Visual Feedback**: Color-coded progress bars (green → orange → red)
+- **Daily Reset**: Notification flags reset at midnight automatically
+- **Grid Layout**: 3-column display of all apps with real-time status
+
+---
+
+### 5. **"Used More Than Yesterday" Notifications**
+
+Proactive alerts when your usage of an app today exceeds yesterday's usage.
+
+**Notification Criteria** (all must be true):
+```java
+boolean shouldNotify = 
+    todayUsage > yesterdayUsage &&
+    todayUsage > TimeUnit.MINUTES.toMillis(5) &&  // Meaningful today
+    yesterdayUsage > TimeUnit.MINUTES.toMillis(1) && // Was used yesterday
+    !isSystemApp(packageName) &&
+    !alreadyNotifiedToday.contains(packageName);
+```
 
 **Data Flow:**
-
-1. Service requests usage data for a time range (e.g., start of day → now)
-2. `UsageStatsHelper` queries system's `UsageStatsManager`
-3. Events are processed sequentially, tracking state transitions
-4. Data is aggregated per app into `ProcessedUsageStats` objects
-5. Results are returned to UI or stored in database
+1. **Yesterday's Cache**: Loaded once per day from Room database
+2. **Live Comparison**: Today's usage fetched from `UsageStatsManager` every 5 minutes
+3. **Smart Filtering**: System apps and previously notified apps excluded
+4. **Notification**: Displays comparison (e.g., "Today: 2h 30m | Yesterday: 1h 45m")
 
 ---
 
-### 🔔 Smart Break Reminder System
+### 6. **Persistent Historical Data**
 
-An important, intelligent overlay system that helps you take mindful breaks without being annoying.
-
-**How It Works:**
-
-**State-Based Operation:**
-MinST's `TrackingService` operates in two distinct modes:
-
-* **Background Mode** (Default): Monitors usage for notifications only, checks every 5 minutes
-* **Reminder Mode** (User-Activated): Fast polling every 15 seconds to track cumulative session time
-
-**Cumulative Time Tracking:**
-
-```
-The service tracks continuous active usage:
-├─ Queries current foreground app every 15 seconds
-├─ If app is NOT ignored (home screen, MinST):
-│  └─ Adds elapsed time to cumulative session counter
-├─ If app IS ignored:
-│  └─ Timer pauses (doesn't reset—preserves progress)
-├─ When cumulative time ≥ configured interval:
-│  └─ Displays break reminder overlay
-└─ After overlay dismissal: Timer resets to zero
-```
-
-**Intelligent Pause/Resume:**
-
-* **Pauses** when you return to home screen or open MinST
-* **Resumes** when you start using any trackable app again
-* **Screen-aware**: Automatically stops when screen locks, resumes on unlock
-* **Handles edge cases**: Null foreground app detection doesn't break the timer
-
-**The Overlay Experience:**
-
-```xml
-overlay_popup.xml: Non-intrusive notification bar
-├─ Appears at top of screen
-├─ 30-second auto-dismiss countdown with progress bar
-├─ Three action buttons:
-│  ├─ Snooze (configurable duration, default 1 min)
-│  ├─ Open Usage Stats (view detailed analytics)
-│  └─ Dismiss (timer resets)
-└─ Glassmorphic design with dark theme
-```
-
-**Configuration:**
-
-* **Interval**: How long of continuous active usage before reminder (default: 1 hour)
-* **Snooze Duration**: How long to delay the next reminder (default: 1 minute)
-* **Preset Options**: Quick-select 20min or 50min intervals
-
----
-
-### 📊 Deep Usage Analytics
-
-MinST provides comprehensive insights that help you understand your digital habits.
-
-#### **App Detail View**
-
-Each app gets its own detailed analytics page with:
-
-**Today's Snapshot:**
-
-* **Total Usage**: Precise foreground time for today
-* **App Opens**: Number of launches (debounced to prevent duplicates)
-* **Last Used**: Relative time display ("2 hours ago")
-
-**Weekly Overview:**
-
-* **Weekly Average**: Daily average over the last 7 days (excluding zero-usage days)
-* **Busiest Day**: Day of the week with highest usage
-* **Total Average**: If >7 days of data, shows overall daily average
-
-**Trend Analysis:**
-
-```
-Day Trend Card (vs. Yesterday):
-├─ Calculates difference in usage
-├─ Shows directional arrow (up/down/same)
-├─ Color-coded: Red for increase, Green for decrease
-└─ Contextual messages based on magnitude
-
-Week Trend Card (vs. Last Week):
-├─ Compares this week's total with last week
-├─ Handles edge cases (started using, not used)
-└─ Provides motivational feedback
-```
-
-**Deeper Insights Carousel:**
-
-* **Usage Rank**: Position among all apps used today
-* **Usage Streak**: Consecutive days of usage (>30 seconds threshold)
-* **Average Session**: Mean duration per launch today
-* **Usage Pattern**: Weekday vs. Weekend classification
-* **Usage Forecast**: Projected end-of-day total (after 10 AM)
-* **Late Night Use**: Usage after 10 PM
-
-**Historical Charts:**
-
-* **7-Day Bar Chart**: Visual breakdown of daily usage
-* **Extended Line Chart**: Continuous view for 30+ days of data
-* **Dynamic Toggle**: Switch between views based on data availability
-
-**Background Implementation:**
-
-```java
-AppDetailActivity.java:
-├─ Two-pass data loading strategy:
-│  ├─ Pass 1: Instant UI update with cached data
-│  └─ Pass 2: Full historical analysis from database
-├─ Database queries:
-│  └─ usageDao().getAllUsageForApp(packageName)
-├─ Hybrid approach for recent 7 days:
-│  ├─ Live data from UsageStatsManager
-│  └─ Historical data from Room database
-└─ Calculations performed on background ExecutorService
-```
-
-#### **Usage Timeline**
-
-The main usage stats screen shows:
-
-* **Total Screen Time**: Sum of all app usage today
-* **Categorized Lists**:
-
-  * "Apps used in last 1 hr" - Sorted by last usage time
-  * "Earlier Today" - Apps used before the last hour
-* **Real-time Updates**: Refreshes every 5 seconds while visible
-* **Progress Bars**: Relative to the most-used app in each category
-* **Material Design Timeline**: Vertical timeline with glassmorphic cards
-
-**Caching System:**
-
-```java
-AppUsageCache.java:
-├─ Singleton pattern for shared state
-├─ 30-second cache validity window
-├─ Background refresh on ExecutorService
-├─ Filters out:
-│  ├─ System apps (except whitelisted like YouTube, Gmail)
-│  ├─ Apps with <500ms usage
-│  └─ MinST itself
-└─ Returns sorted list (highest usage first)
-```
-
----
-
-### 🎯 Individual App Limits
-
-Set custom daily time limits for specific apps with smart notifications.
-
-**How Limits Work:**
-
-**Setting a Limit:**
-
-1. Navigate to Settings → "Set Individual App Usage Limits"
-2. Apps are sorted: Those with limits first, then by usage
-3. Tap any app to open the modern bottom sheet dialog
-4. Set hours and minutes using NumberPicker wheels
-5. **Smart Validation**: Warns if limit is below today's current usage
-
-**Limit Tracking:**
-
-```java
-Goal Monitoring (TrackingService.java):
-├─ Runs every 5 minutes in background
-├─ Queries today's usage: getAggregatedUsageMap()
-├─ Loads all goals from database: goalDao().getAllGoals()
-├─ For each app with a limit:
-│  ├─ Compares usage against goal.dailyGoalMillis
-│  ├─ If exceeded AND not yet notified today:
-│  │  └─ Sends notification via NotificationHelper
-│  └─ Tracks in SharedPreferences: "goal_notified_YYYY-MM-DD"
-└─ Notifications reset at midnight automatically
-```
-
-**Visual Feedback:**
-
-* **Grid Layout**: 3-column grid of all launchable apps
-* **Progress Bars**: Show usage relative to limit
-* **Color Coding**:
-
-  * Green: Plenty of time left
-  * Orange: Less than 15 minutes remaining
-  * Red: Limit reached
-* **Status Labels**: "2h 15m left", "Limit Reached", or "Set Limit"
-
----
-
-### 📈 "Used More Than Yesterday" Notifications
-
-Intelligent notifications that alert you when your usage of an app today exceeds yesterday's usage.
-
-**Smart Logic:**
-
-```
-Notification Criteria (all must be true):
-├─ Today's usage > Yesterday's usage
-├─ Today's usage > 5 minutes (meaningful threshold)
-├─ Yesterday's usage > 1 minute (was actually used)
-├─ App is not a system app
-└─ Not already notified today for this app
-```
-
-**How It Works:**
-
-```java
-TrackingService.checkYesterdayLimits():
-1. Load yesterday's usage from database cache
-   └─ usageDao().getUsageMapForDate(yesterday)
-
-2. Get today's live usage
-   └─ UsageStatsHelper.getAggregatedUsageMap(today)
-
-3. Compare each app:
-   ├─ Filter system apps
-   ├─ Check against "yesterday_notified_YYYY-MM-DD" set
-   └─ If criteria met: queue notification
-
-4. Send notifications:
-   ├─ Title: "Used More Than Yesterday"
-   ├─ Content: "Today: 2h 30m | Yesterday: 1h 45m"
-   └─ Mark as notified in SharedPreferences
-
-5. Reset daily at midnight automatically
-```
-
-**Database Caching:**
-
-* Yesterday's data loaded once per day from Room database
-* Cached in memory for performance (avoids repeated DB queries)
-* Updated automatically via `DataSaveWorker` at midnight
-
----
-
-### 💾 Persistent Historical Data
-
-All your usage data is stored locally in a SQLite database for long-term insights.
+All usage data is automatically saved to a local SQLite database for long-term analysis.
 
 **Database Schema:**
 
 ```sql
--- App Goals Table
+-- Room Database (AppDatabase.java)
+
 CREATE TABLE app_goals (
     packageName TEXT PRIMARY KEY,
     dailyGoalMillis INTEGER,
     usageAtTimeOfSet INTEGER
 );
 
--- Daily Usage Table  
 CREATE TABLE daily_usage (
     packageName TEXT,
     date TEXT,  -- Format: YYYY-MM-DD
@@ -387,402 +263,543 @@ CREATE TABLE daily_usage (
 
 **Automated Data Collection:**
 
-**Initial 7-Day Import:**
+<div align="center">
 
-```java
-MainActivity.triggerInitialDataImport():
-├─ Runs once on first app launch
-├─ Queues 6 OneTimeWorkRequests (for past 6 days)
-├─ Each worker:
-│  ├─ Calculates start/end of that specific day
-│  ├─ Queries UsageStatsManager for that day
-│  └─ Saves to database via usageDao().insertDailyUsage()
-└─ Delayed by 2 minutes to avoid blocking initial setup
+```mermaid
+graph LR
+    A[First App Launch] --> B[DataSaveWorker<br/>Queues 6 OneTimeRequests]
+    B --> C[Import Past 6 Days<br/>from UsageStatsManager]
+    C --> D[Save to Database]
+    
+    E[Every Day at Midnight] --> F[PeriodicWorkRequest<br/>DataSaveWorker]
+    F --> G[Query Yesterday's Usage]
+    G --> H[Save to Database]
+    
+    style A fill:#4CAF50
+    style E fill:#2196F3
+    style D fill:#FF9800
+    style H fill:#FF9800
 ```
 
-**Daily Background Saves:**
+</div>
 
-```java
-DataSaveWorker (runs every 24 hours):
-├─ Triggered by WorkManager at ~midnight
-├─ Saves yesterday's usage data:
-│  ├─ Queries yesterday: start 00:00:00 to 23:59:59
-│  ├─ Gets aggregated map from UsageStatsManager  
-│  └─ Batch inserts into daily_usage table
-└─ Uses REPLACE conflict strategy (upsert)
-```
+**Implementation Highlights:**
+- **Initial Import**: Past 6 days imported on first launch (2-minute delay to avoid blocking setup)
+- **Daily Saves**: WorkManager runs at midnight to save yesterday's data
+- **Efficient Queries**: Room's `@MapInfo` annotation enables fast Map<String, Long> retrieval
+- **Data Integrity**: REPLACE conflict strategy ensures data consistency
+
+---
+
+## 📱 Screenshots
+
+<div align="center">
+
+### Main Interface & Usage Tracking
+
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="app/src/main/res/screenshots/Picture_4.png" width="100%" style="border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.2);"/>
+<br/><b>Main Dashboard</b>
+<br/>Central toggle for break reminders with quick access to usage stats and settings
+</td>
+<td align="center" width="33%">
+<img src="app/src/main/res/screenshots/Picture_3.png" width="100%" style="border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.2);"/>
+<br/><b>Usage Timeline</b>
+<br/>Real-time screen time with per-app breakdown, categorized by recent usage
+</td>
+<td align="center" width="33%">
+<img src="app/src/main/res/screenshots/Picture_2.png" width="100%" style="border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.2);"/>
+<br/><b>App Insights</b>
+<br/>Detailed analytics with trends, streaks, forecasts, and historical charts
+</td>
+</tr>
+</table>
+
+### Settings & App Limits
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="app/src/main/res/screenshots/Picture_1.png" width="80%" style="border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.2);"/>
+<br/><b>Break Reminder Settings</b>
+<br/>Configure interval, snooze duration with quick preset options
+</td>
+<td align="center" width="50%">
+<img src="app/src/main/res/screenshots/Picture_5.png" width="80%" style="border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.2);"/>
+<br/><b>Individual App Limits</b>
+<br/>Set per-app usage limits with color-coded progress indicators
+</td>
+</tr>
+</table>
+
+</div>
 
 ---
 
 ## 🏗️ Architecture
 
-### **Technical Stack**
+MinST follows clean architecture principles with clear separation of concerns.
 
+### **Technology Stack**
+
+<table>
+<tr>
+<td width="50%">
+
+**Core Technologies**
+- **Language**: Java
+- **Min SDK**: 24 (Android 7.0)
+- **Architecture**: MVVM + Clean Architecture
+- **Database**: Room Persistence Library
+- **Background Tasks**: WorkManager
+- **Dependency Injection**: Manual (Lightweight)
+
+</td>
+<td width="50%">
+
+**Key Libraries**
+- **MPAndroidChart**: Data visualization
+- **Material Components**: UI framework
+- **Flexbox Layout**: Flexible UI layouts
+- **AndroidX Libraries**: Jetpack components
+- **RecyclerView**: Efficient list rendering
+
+</td>
+</tr>
+</table>
+
+### **Architecture Diagram**
+
+```mermaid
+graph TB
+    subgraph Presentation Layer
+        A1[MainActivity]
+        A2[UsageStatsActivity]
+        A3[AppDetailActivity]
+        A4[SetGoalsActivity]
+        A5[SettingsActivity]
+    end
+    
+    subgraph Domain Layer
+        B1[AppUsageCache<br/>Singleton]
+        B2[UsageStatsHelper<br/>Static Methods]
+        B3[Prefs<br/>Settings Manager]
+    end
+    
+    subgraph Data Layer
+        C1[(Room Database<br/>AppDatabase)]
+        C2[SharedPreferences<br/>App State]
+        C3[UsageStatsManager<br/>Android System]
+    end
+    
+    subgraph Service Layer
+        D1[TrackingService<br/>Foreground Service]
+        D2[ScreenStateReceiver<br/>Broadcast Receiver]
+        D3[DataSaveWorker<br/>WorkManager]
+        D4[TrackingWorker<br/>Watchdog]
+    end
+    
+    A1 --> B1
+    A2 --> B1
+    A3 --> B2
+    A4 --> C1
+    A5 --> B3
+    
+    B1 --> B2
+    B2 --> C3
+    
+    D1 --> B2
+    D1 --> C1
+    D1 --> C2
+    D2 --> D1
+    D3 --> C3
+    D3 --> C1
+    D4 --> D1
+    
+    style A1 fill:#E8F5E9
+    style A2 fill:#E8F5E9
+    style A3 fill:#E8F5E9
+    style A4 fill:#E8F5E9
+    style A5 fill:#E8F5E9
+    style B1 fill:#E3F2FD
+    style B2 fill:#E3F2FD
+    style B3 fill:#E3F2FD
+    style C1 fill:#FFF3E0
+    style C2 fill:#FFF3E0
+    style C3 fill:#FFF3E0
+    style D1 fill:#F3E5F5
+    style D2 fill:#F3E5F5
+    style D3 fill:#F3E5F5
+    style D4 fill:#F3E5F5
 ```
-┌─────────────────────────────────────────────────────┐
-│ Presentation Layer                                   │
-│ ┌────────────┐ ┌────────────┐ ┌────────────┐         │
-│ │ Fragments  │ │ ViewModels │ │ Adapters   │         │
-│ └────────────┘ └────────────┘ └────────────┘         │
-└─────────────────────────────────────────────────────┘
-                        │
-                        ▼
-┌─────────────────────────────────────────────────────┐
-│ Domain Layer                                        │
-│ ┌────────────┐ ┌────────────┐ ┌────────────┐         │
-│ │ Use Cases  │ │ Repositories││ Models     │         │
-│ └────────────┘ └────────────┘ └────────────┘         │
-└─────────────────────────────────────────────────────┘
-                        │
-                        ▼
-┌─────────────────────────────────────────────────────┐
-│ Data Layer                                          │
-│ ┌────────────┐ ┌────────────┐ ┌────────────┐         │
-│ │ Room/DB    │ │ Retrofit   │ │ SharedPrefs │        │
-│ └────────────┘ └────────────┘ └────────────┘         │
-└─────────────────────────────────────────────────────┘
-                        │
-                        ▼
-┌─────────────────────────────────────────────────────┐
-│ Service Layer                                       │
-│ ┌──────────────────────────────────────────────┐    │
-│ │ Foreground Monitor Service                    │    │
-│ │ Accessibility Self-Healing                    │    │
-│ │ Usage Collector Worker (WorkManager)          │    │
-│ └──────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────┘
 
+### **Key Components**
+
+#### **1. TrackingService** (Unified Background Service)
+```java
+// Dual-mode operation
+public class TrackingService extends Service {
+    // Background Mode (default): 5-minute checks for notifications
+    private boolean areFastChecksActive = true;
+    
+    // Reminder Mode (user-activated): 15-second checks for overlay timer
+    private boolean areRemindersActive = false;
+    
+    private void performChecks() {
+        // Update overlay timer if reminders active
+        if (areRemindersActive) updateOverlayTimer();
+        
+        // Run notification checks every 5 minutes
+        if (shouldRunFullCheck()) runFullNotificationChecks();
+        
+        // Schedule next check (15s or 5min based on mode)
+        long delay = areRemindersActive ? 15_000L : 300_000L;
+        handler.postDelayed(checkRunnable, delay);
+    }
+}
 ```
 
-### **Design Patterns**
+#### **2. AppUsageCache** (Performance Optimization)
+```java
+// Singleton cache with 30-second validity
+public class AppUsageCache {
+    private List<AppUsageModel> filteredList = new ArrayList<>();
+    private long lastUpdatedTimestamp = 0;
+    private static final long CACHE_VALIDITY_MS = 30_000L;
+    
+    public void getFilteredList(Context context, AppListCallback callback) {
+        // Return cached data if fresh
+        if (isCacheFresh()) {
+            callback.onAppListReady(new ArrayList<>(filteredList));
+            return;
+        }
+        
+        // Otherwise refresh asynchronously
+        refreshCache(context, callback);
+    }
+}
+```
 
-* **MVVM (Model-View-ViewModel)**: Separation of concerns for testability
-* **Repository Pattern**: Abstraction over data sources
-* **Observer Pattern**: Reactive data flow with LiveData/Flow
-* **Singleton**: Service managers and database instances
-* **Factory Pattern**: ViewModel and Worker instantiation
-* **Strategy Pattern**: Pluggable enforcement policies
-* **State Pattern**: App limit state management
-
-### **Key Technologies**
-
-| Component        | Technology                  | Purpose                             |
-| ---------------- | --------------------------- | ----------------------------------- |
-| **Language**     | Java                        | Modern, concise Android development |
-| **UI Framework** | Jetpack Compose / XML Views | Declarative UI / Traditional views  |
-| **Architecture** | MVVM + Clean Architecture   | Maintainable, testable code         |
-| **Database**     | Room                        | Persistent storage                  |
-| **Async**        | FOREGROUND_SERVICE_HEALTH   | Non-blocking operations             |
-| **Background**   | WorkManager                 | Reliable background tasks           |
-| **Charts**       | MPAndroidChart              | Beautiful visualizations            |
+#### **3. Room Database** (Data Persistence)
+```java
+@Database(entities = {AppGoalEntity.class, DailyUsageEntity.class}, 
+          version = 1, exportSchema = false)
+public abstract class AppDatabase extends RoomDatabase {
+    public abstract GoalDao goalDao();
+    public abstract UsageDao usageDao();
+    
+    // Thread-safe singleton instance
+    private static volatile AppDatabase INSTANCE;
+}
+```
 
 ---
 
 ## 🚀 Installation
 
 ### **Prerequisites**
+- Android device running **Android 7.0 (API 24)** or higher
+- Minimum **50MB** free storage space
 
-* Android device running Android 7.0 (API 24) or higher
-* Minimum 50MB free storage space
-* Internet connection for initial setup (optional)
+### **Download & Install**
 
-### **Download Options**
+1. **Download APK**
+   - Visit the [Releases page](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/releases)
+   - Download the latest `MinST-vX.X.X.apk`
 
-#### **1. Google Play Store (Recommended)**
+2. **Install**
+   - Enable "Install from Unknown Sources" in Settings
+   - Open the downloaded APK and follow installation prompts
 
-```
-Coming Soon!
-```
+3. **Grant Permissions**
+   
+   MinST requires the following permissions for core functionality:
 
-#### **2. GitHub Releases**
+   | Permission | Purpose | Required |
+   |------------|---------|----------|
+   | Usage Access | Read app usage data | ✅ Yes |
+   | Display Over Other Apps | Show break reminders | ✅ Yes |
+   | Activity Recognition | Detect screen state | ✅ Yes |
+   | Notifications | Send usage alerts | ✅ Yes |
 
-1. Visit the [Releases page](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/releases)
-2. Download the latest `MinST-vX.X.X.apk`
-3. Enable "Install from Unknown Sources" in Settings
-4. Install the APK
+4. **Optimize Battery Settings** (Recommended)
+   - Navigate to: `Settings → Battery → Battery Optimization`
+   - Find **MinST** and select **"Don't optimize"**
+   - This ensures reliable alert delivery
 
-#### **3. Build from Source**
+### **Build from Source**
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time.git
 cd MinST-Minimize-Screen-Time
 
 # Open in Android Studio
 # File > Open > Select project directory
 
-# Build the APK
+# Build APK
 ./gradlew assembleRelease
 
 # Install on connected device
 ./gradlew installRelease
 ```
 
-### **Initial Setup**
-
-1. **Grant Permissions**:
-
-   * Usage Access (Settings > Apps > Special Access > Usage Access)
-   * Display Over Other Apps (for overlays)
-   * Accessibility Service (for self-healing)
-   * Notifications (for alerts)
-
-2. **Enable Device Administrator**:
-
-   * Required for uninstall protection
-   * Settings > Security > Device Administrators > MinST
-
-3. **Configure First Limits**:
-
-   * Set your daily screen time goal
-   * Choose apps to monitor
-   * Customize intervention preferences
-
-4. **Optimize Battery Settings**:
-
-   * Disable battery optimization for MinST
-   * Settings > Battery > Battery Optimization > MinST > Don't optimize
-
 ---
 
-## 📱 Usage Guide
+## 🎯 How It Works
 
-### **Dashboard Overview**
+### **1. First Launch Setup**
 
-The home screen provides an at-a-glance view of your digital health:
+```mermaid
+sequenceDiagram
+    participant User
+    participant MainActivity
+    participant System as Android System
+    participant Service as TrackingService
+    participant Worker as DataSaveWorker
+    participant DB as Database
 
-* Today's total screen time with progress bar
-* Most used apps with time breakdowns
-* Upcoming predictions and warnings
-* Quick access to limits and settings
-
-### **Setting Effective Limits**
-
-1. Navigate to **Limits** tab
-2. Tap **Add App Limit**
-3. Select apps or categories
-4. Set daily time allowance
-5. Choose enforcement level (Remind/Warn/Block)
-6. Enable predictive warnings
-7. Save and activate
-
-### **Understanding Predictions**
-
-MinST's prediction panel shows:
-
-* **Trajectory Graph**: Visual forecast of today's usage
-* **Confidence Score**: How certain the prediction is (60-100%)
-* **Warning Time**: When you'll receive a proactive alert
-* **Suggested Action**: Recommended adjustment to stay on track
-
-### **Managing Overlays**
-
-Customize your intervention experience:
-
-* **Design**: Choose from 5 overlay themes
-* **Messages**: Add personal motivations
-* **Extensions**: Configure grace period allowances
-* **Emergency Bypass**: Set up trusted contacts for urgent access
-
-### **Reviewing Insights**
-
-The Analytics tab offers deep dives:
-
-* Compare weeks, months, or custom periods
-* Export data as CSV for external analysis
-* View category trends (productivity vs entertainment)
-* Identify your peak distraction hours
-* Track streak achievements and milestones
-
----
-
-## 🔐 Privacy & Security
-
-MinST takes your privacy seriously:
-
-* **Local-First**: All data stored on-device by default
-* **No Analytics**: Zero telemetry or user tracking
-* **Encrypted Storage**: Sensitive data encrypted at rest
-* **No Ads**: Completely ad-free experience
-* **No Network Required**: Full functionality offline
-* **Optional Cloud Backup**: End-to-end encrypted if enabled
-* **Open Source**: Code available for audit
-
-**Permissions Explained:**
-
-| Permission                   | Purpose                 | Required |
-| ---------------------------- | ----------------------- | -------- |
-| `PACKAGE_USAGE_STATS`        | Read app usage data     | ✅ Yes    |
-| `SYSTEM_ALERT_WINDOW`        | Display overlays        | ✅ Yes    |
-| `BIND_ACCESSIBILITY_SERVICE` | Self-healing engine     | ✅ Yes    |
-| `FOREGROUND_SERVICE`         | Persistent monitoring   | ✅ Yes    |
-| `RECEIVE_BOOT_COMPLETED`     | Auto-start after reboot | ✅ Yes    |
-| `INTERNET`                   | Optional cloud backup   | ❌ No     |
-| `VIBRATE`                    | Notification alerts     | ❌ No     |
-
----
-
-## 🛠️ Development
-
-### **Building and Running**
-
-```bash
-# Debug build
-./gradlew assembleDebug
-adb install app/build/outputs/apk/debug/app-debug.apk
-
-# Run tests
-./gradlew test
-./gradlew connectedAndroidTest
-
-# Generate coverage report
-./gradlew jacocoTestReport
-
-# Lint check
-./gradlew lint
+    User->>MainActivity: Launch app
+    MainActivity->>User: Show permission screen
+    User->>System: Grant all permissions
+    System-->>MainActivity: Permissions granted
+    
+    MainActivity->>Worker: Queue 6 OneTimeRequests<br/>(Import past 6 days)
+    MainActivity->>Service: Start TrackingService
+    MainActivity->>Worker: Schedule daily<br/>PeriodicWorkRequest
+    
+    Note over Worker,DB: 2-minute delay
+    Worker->>System: Query usage for each past day
+    System-->>Worker: Historical usage data
+    Worker->>DB: Save to daily_usage table
+    
+    Service->>Service: Begin 5-minute<br/>background checks
 ```
 
-### **Code Standards**
+### **2. Break Reminder Flow**
 
-* **Java Coding Conventions**: Follow official Java style guide
-* **Android Best Practices**: Material Design, Jetpack components
-* **Test Coverage**: Minimum 90% for core logic
+```mermaid
+sequenceDiagram
+    participant User
+    participant MainActivity
+    participant Service as TrackingService
+    participant System as UsageStatsManager
+    participant Overlay
+
+    User->>MainActivity: Tap central ring
+    MainActivity->>MainActivity: Set isReminderActive=true
+    MainActivity->>Service: Send START_REMINDERS action
+    
+    Service->>Service: Switch to fast polling (15s)
+    
+    loop Every 15 seconds
+        Service->>System: getCurrentForegroundPackage()
+        System-->>Service: Current app name
+        
+        alt App is NOT ignored
+            Service->>Service: Add 15s to cumulative timer
+            
+            alt Timer >= Interval
+                Service->>Overlay: Show break reminder
+                Overlay-->>User: Display notification
+                User->>Overlay: Dismiss/Snooze/View Stats
+                Overlay->>Service: Reset timer
+            end
+        else App IS ignored (Home/MinST)
+            Service->>Service: Pause timer<br/>(preserve progress)
+        end
+    end
+```
+
+### **3. Daily Usage Tracking**
+
+```mermaid
+graph LR
+    A[UsageStatsActivity<br/>Opens] --> B[AppUsageCache<br/>Check cache]
+    B -->|Fresh| C[Return cached data<br/>< 30 seconds old]
+    B -->|Stale| D[Background refresh]
+    
+    D --> E[UsageStatsHelper<br/>Query today's events]
+    E --> F[Process events<br/>Calculate foreground time]
+    F --> G[Filter & sort apps<br/>Exclude system apps]
+    G --> H[Update cache<br/>Set timestamp]
+    H --> I[Return to UI]
+    
+    I --> J[Display in<br/>RecyclerView]
+    J --> K[Refresh every 5s<br/>while visible]
+    
+    style A fill:#E8F5E9
+    style J fill:#E8F5E9
+    style H fill:#FFF3E0
+    style E fill:#E3F2FD
+```
 
 ---
 
 ## 🤝 Contributing
 
-I welcome contributions! Here's how you can help:
+Contributions are welcome! Here's how you can help make MinST even better.
 
 ### **Ways to Contribute**
 
-1. **Report Bugs**: Open an issue with detailed reproduction steps
-2. **Suggest Features**: Describe use cases and expected behavior
-3. **Submit Pull Requests**: Fix bugs or implement features
-4. **Improve Documentation**: Clarify instructions or add examples
-5. **Translate**: Help make MinST accessible worldwide
-
-### **Contribution Workflow**
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to your branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request with:
-
-   * Clear description of changes
-   * Screenshots/videos if UI-related
-   * Test results
-   * Linked issue (if applicable)
+- 🐛 **Report Bugs**: Open an issue with detailed reproduction steps
+- 💡 **Suggest Features**: Describe use cases and expected behavior
+- 🔧 **Submit Pull Requests**: Fix bugs or implement new features
+- 📖 **Improve Documentation**: Clarify instructions or add examples
+- 🌍 **Translate**: Help make MinST accessible worldwide
 
 ### **Development Setup**
 
 ```bash
 # Fork and clone
-git clone https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time.git
+git clone https://github.com/YOUR_USERNAME/MinST-Minimize-Screen-Time.git
 cd MinST-Minimize-Screen-Time
 
 # Add upstream remote
 git remote add upstream https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time.git
 
-# Create branch
-git checkout -b feature/my-new-feature
+# Create feature branch
+git checkout -b feature/amazing-feature
 
-# After changes, sync with upstream
-git fetch upstream
-git rebase upstream/main
+# Make changes and commit
+git commit -m "Add amazing feature"
+
+# Push to your fork
+git push origin feature/amazing-feature
+
+# Open Pull Request on GitHub
 ```
 
-### **Code Review Checklist**
+### **Code Style Guidelines**
 
-Before submitting:
+- Follow [Java Code Conventions](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html)
+- Use meaningful variable names (avoid single letters except for loops)
+- Add comments for complex logic
+- Keep methods focused (single responsibility)
+- Write unit tests for new features
 
-* [ ] Code follows Java style guide
-* [ ] Tests for new features added
-* [ ] Documentation updated
-* [ ] No lint warnings
-* [ ] Commit messages are clear
-* [ ] Screenshots included for UI changes
+### **Pull Request Checklist**
+
+- [ ] Code follows Java style guidelines
+- [ ] All existing tests pass
+- [ ] New tests added for new features
+- [ ] Documentation updated (README, code comments)
+- [ ] No lint warnings
+- [ ] Commit messages are clear and descriptive
+- [ ] Screenshots included for UI changes
 
 ---
 
+## 🔐 Privacy & Security
+
+MinST is designed with privacy as a core principle.
+
+- **🔒 Local-First**: All data stored on your device
+- **🚫 Zero Tracking**: No analytics, telemetry, or user profiling
+- **🔐 Encrypted Storage**: Sensitive data protected at rest
+- **📵 Offline Functionality**: Full features without internet connection
+- **🔓 Open Source**: Code available for public audit
+
+### **Data Collection**
+
+MinST collects **only** the following data, stored **locally** on your device:
+
+| Data Type | Purpose | Storage Location |
+|-----------|---------|------------------|
+| App usage times | Calculate screen time | Room Database |
+| App launch counts | Track session frequency | Calculated on-demand |
+| User preferences | Remember settings | SharedPreferences |
+| Daily usage goals | Enforce limits | Room Database |
+
+**MinST never:**
+- Sends data to external servers
+- Accesses your personal files
+- Reads your messages or calls
+- Tracks your location
+- Shares data with third parties
+
+---
+
+## 📄 License
+
 ```
+MIT License
+
 Copyright (c) 2024 Kumar Piyush Raj
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction...
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 ---
 
 ## 🙏 Acknowledgments
 
-* **Android Development Community**: For excellent libraries and resources
-* **Material Design**: For beautiful, accessible design guidelines
-* **Stack Overflow**: For providing key solutions to arised problems
-* **Contributors**: Everyone who has helped improve MinST
+- **Android Development Community**: For excellent libraries and resources
+- **Material Design Team**: For beautiful, accessible design guidelines
+- **Stack Overflow Community**: For invaluable problem-solving assistance
+- **Open Source Contributors**: Everyone who has helped improve MinST
 
 ---
 
 ## 📞 Contact & Support
 
-* **Issues**: [GitHub Issues](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/issues)
-* **Discussions**: [GitHub Discussions](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/discussions)
-* **Email**: [kmpiyushraj@gmail.com](mailto:kmpiyushraj@gmail.com)
+<div align="center">
+
+**Need Help or Have Questions?**
+
+[![GitHub Issues](https://img.shields.io/badge/Issues-Report%20Bug-red?style=for-the-badge&logo=github)](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/issues)
+[![GitHub Discussions](https://img.shields.io/badge/Discussions-Ask%20Question-blue?style=for-the-badge&logo=github)](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/discussions)
+[![Email](https://img.shields.io/badge/Email-Contact%20Developer-green?style=for-the-badge&logo=gmail)](mailto:kmpiyushraj@gmail.com)
+
+</div>
 
 ---
 
 ## 🗺️ Roadmap
 
 ### **Version 1.1** (Next Release)
-
-* [ ] Focus Mode with scheduled automation
-* [ ] Family sharing and parental controls
-* [ ] Gamification with achievements
-* [ ] Dark mode improvements
-* [ ] Export reports as PDF
+- [ ] Focus Mode with scheduled automation
+- [ ] Dark mode improvements
+- [ ] Export usage reports as CSV/PDF
+- [ ] Widget for quick stats on home screen
 
 ### **Version 1.2**
+- [ ] Wear OS companion app
+- [ ] AI-powered usage insights
+- [ ] Social challenges with friends
+- [ ] Integration with productivity apps (Todoist, Notion)
 
-* [ ] Wear OS companion app
-* [ ] Website/desktop usage tracking (requires companion extension)
-* [ ] AI-powered personalized coaching
-* [ ] Social challenges with friends
-* [ ] Integration with productivity apps (Todoist, Notion)
-
-### **Version 2.0** (Future)
-
-* [ ] Cross-platform support (iOS, desktop)
-* [ ] Mental health integration (mood tracking)
-* [ ] Smart recommendations based on context
-* [ ] Offline-first progressive web app
-* [ ] Enterprise/education editions
-
----
-
-## 📊 Statistics & Impact
-
-<div align="center">
-
-### **Helping Users Reclaim Time**
-
-| Metric                  | Value         |
-| ----------------------- | ------------- |
-| **Average Reduction**   | 2.5 hours/day |
-| **Users Reached Goal**  | 78%           |
-| **Satisfaction Rating** | 4.7/5.0 ⭐     |
-| **Active Users**        | Growing!      |
-
-</div>
+### **Version 2.0** (Future Vision)
+- [ ] Cross-platform support (iOS, desktop)
+- [ ] Website/browser usage tracking (requires extension)
+- [ ] Mental health integration (mood tracking)
+- [ ] Enterprise/education editions
 
 ---
 
 ## ⚠️ Disclaimer
 
-MinST is a digital wellbeing tool designed to assist users in managing their screen time. It is not a replacement for professional help if you're struggling with technology addiction. For serious concerns, please consult a mental health professional.
+MinST is a digital wellbeing tool designed to assist users in managing their screen time. It is **not a replacement** for professional help if you're struggling with technology addiction. For serious concerns, please consult a mental health professional.
 
-The app requires sensitive permissions to function. All data is stored locally and never transmitted without explicit consent. Review the privacy policy for complete details.
+The app requires sensitive permissions to function properly. All data is stored locally and never transmitted without explicit consent. Review the [Privacy Policy](#-privacy--security) for complete details.
 
 ---
 
@@ -790,9 +807,8 @@ The app requires sensitive permissions to function. All data is stored locally a
 
 **Made with ❤️ by [Kumar Piyush Raj](https://github.com/kumarpiyushraj)**
 
-If MinST helps you, consider giving it a ⭐ on GitHub!
+If MinST helps you build better digital habits, consider giving it a ⭐ on GitHub!
 
 [⬆ Back to Top](#minst---minimize-screen-time)
 
 </div>
-```
