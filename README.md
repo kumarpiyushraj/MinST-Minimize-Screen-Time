@@ -374,31 +374,31 @@ MinST follows clean architecture principles with clear separation of concerns.
 
 ```mermaid
 graph TB
-    subgraph Presentation Layer
-        A1[MainActivity]
-        A2[UsageStatsActivity]
-        A3[AppDetailActivity]
-        A4[SetGoalsActivity]
-        A5[SettingsActivity]
+    subgraph PresentationLayer["📱 Presentation Layer"]
+        A1["MainActivity"]
+        A2["UsageStatsActivity"]
+        A3["AppDetailActivity"]
+        A4["SetGoalsActivity"]
+        A5["SettingsActivity"]
     end
     
-    subgraph Domain Layer
-        B1[AppUsageCache<br/>Singleton]
-        B2[UsageStatsHelper<br/>Static Methods]
-        B3[Prefs<br/>Settings Manager]
+    subgraph DomainLayer["🧠 Domain Layer"]
+        B1["AppUsageCache<br/>(Singleton)"]
+        B2["UsageStatsHelper<br/>(Static Methods)"]
+        B3["Prefs<br/>(Settings Manager)"]
     end
     
-    subgraph Data Layer
-        C1[(Room Database<br/>AppDatabase)]
-        C2[SharedPreferences<br/>App State]
-        C3[UsageStatsManager<br/>Android System]
+    subgraph DataLayer["💾 Data Layer"]
+        C1[("Room Database<br/>AppDatabase")]
+        C2["SharedPreferences<br/>(App State)"]
+        C3["UsageStatsManager<br/>(Android System)"]
     end
     
-    subgraph Service Layer
-        D1[TrackingService<br/>Foreground Service]
-        D2[ScreenStateReceiver<br/>Broadcast Receiver]
-        D3[DataSaveWorker<br/>WorkManager]
-        D4[TrackingWorker<br/>Watchdog]
+    subgraph ServiceLayer["⚙️ Service Layer"]
+        D1["TrackingService<br/>(Foreground Service)"]
+        D2["ScreenStateReceiver<br/>(Broadcast Receiver)"]
+        D3["DataSaveWorker<br/>(WorkManager)"]
+        D4["TrackingWorker<br/>(Watchdog)"]
     end
     
     A1 --> B1
@@ -418,21 +418,26 @@ graph TB
     D3 --> C1
     D4 --> D1
     
-    style A1 fill:#E8F5E9
-    style A2 fill:#E8F5E9
-    style A3 fill:#E8F5E9
-    style A4 fill:#E8F5E9
-    style A5 fill:#E8F5E9
-    style B1 fill:#E3F2FD
-    style B2 fill:#E3F2FD
-    style B3 fill:#E3F2FD
-    style C1 fill:#FFF3E0
-    style C2 fill:#FFF3E0
-    style C3 fill:#FFF3E0
-    style D1 fill:#F3E5F5
-    style D2 fill:#F3E5F5
-    style D3 fill:#F3E5F5
-    style D4 fill:#F3E5F5
+    style A1 fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#000
+    style A2 fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#000
+    style A3 fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#000
+    style A4 fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#000
+    style A5 fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#000
+    style B1 fill:#2196F3,stroke:#1565C0,stroke-width:3px,color:#000
+    style B2 fill:#2196F3,stroke:#1565C0,stroke-width:3px,color:#000
+    style B3 fill:#2196F3,stroke:#1565C0,stroke-width:3px,color:#000
+    style C1 fill:#FF9800,stroke:#E65100,stroke-width:3px,color:#000
+    style C2 fill:#FF9800,stroke:#E65100,stroke-width:3px,color:#000
+    style C3 fill:#FF9800,stroke:#E65100,stroke-width:3px,color:#000
+    style D1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:3px,color:#fff
+    style D2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:3px,color:#fff
+    style D3 fill:#9C27B0,stroke:#6A1B9A,stroke-width:3px,color:#fff
+    style D4 fill:#9C27B0,stroke:#6A1B9A,stroke-width:3px,color:#fff
+    
+    style PresentationLayer fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#000
+    style DomainLayer fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#000
+    style DataLayer fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#000
+    style ServiceLayer fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#000
 ```
 
 ### **Key Components**
@@ -617,23 +622,30 @@ sequenceDiagram
 
 ```mermaid
 graph LR
-    A[UsageStatsActivity<br/>Opens] --> B[AppUsageCache<br/>Check cache]
-    B -->|Fresh| C[Return cached data<br/>< 30 seconds old]
-    B -->|Stale| D[Background refresh]
+    A["📱 UsageStatsActivity<br/>Opens"] --> B["💾 AppUsageCache<br/>Check cache"]
+    B -->|"✅ Fresh"| C["⚡ Return cached data<br/>(< 30 seconds old)"]
+    B -->|"🔄 Stale"| D["🔃 Background refresh"]
     
-    D --> E[UsageStatsHelper<br/>Query today's events]
-    E --> F[Process events<br/>Calculate foreground time]
-    F --> G[Filter & sort apps<br/>Exclude system apps]
-    G --> H[Update cache<br/>Set timestamp]
-    H --> I[Return to UI]
+    D --> E["🔍 UsageStatsHelper<br/>Query today's events"]
+    E --> F["⚙️ Process events<br/>Calculate foreground time"]
+    F --> G["🎯 Filter & sort apps<br/>Exclude system apps"]
+    G --> H["💾 Update cache<br/>Set timestamp"]
+    H --> I["📤 Return to UI"]
     
-    I --> J[Display in<br/>RecyclerView]
-    J --> K[Refresh every 5s<br/>while visible]
+    I --> J["📊 Display in<br/>RecyclerView"]
+    J --> K["🔄 Refresh every 5s<br/>while visible"]
     
-    style A fill:#E8F5E9
-    style J fill:#E8F5E9
-    style H fill:#FFF3E0
-    style E fill:#E3F2FD
+    style A fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#000,font-weight:bold
+    style B fill:#2196F3,stroke:#1565C0,stroke-width:3px,color:#000,font-weight:bold
+    style C fill:#66BB6A,stroke:#2E7D32,stroke-width:3px,color:#000,font-weight:bold
+    style D fill:#42A5F5,stroke:#1565C0,stroke-width:3px,color:#000,font-weight:bold
+    style E fill:#2196F3,stroke:#1565C0,stroke-width:3px,color:#000,font-weight:bold
+    style F fill:#42A5F5,stroke:#1565C0,stroke-width:3px,color:#000,font-weight:bold
+    style G fill:#64B5F6,stroke:#1565C0,stroke-width:3px,color:#000,font-weight:bold
+    style H fill:#FF9800,stroke:#E65100,stroke-width:3px,color:#000,font-weight:bold
+    style I fill:#FFB74D,stroke:#E65100,stroke-width:3px,color:#000,font-weight:bold
+    style J fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#000,font-weight:bold
+    style K fill:#66BB6A,stroke:#2E7D32,stroke-width:3px,color:#000,font-weight:bold
 ```
 
 ---
@@ -809,6 +821,6 @@ The app requires sensitive permissions to function properly. All data is stored 
 
 If MinST helps you build better digital habits, consider giving it a ⭐ on GitHub!
 
-[⬆ Back to Top](#minst---minimize-screen-time)
+[Back to Top](#minst---minimize-screen-time)
 
 </div>
