@@ -2,9 +2,11 @@
 
 <div align="center">
 
-![MinST Banner](app/src/main/res/screenshots/banner.png)
+<img src="app/src/main/res/screenshots/banner.png" alt="MinST Logo" width="200" style="max-width: 200px;"/>
 
-**Your intelligent companion for mindful digital habits**
+<br/><br/>
+
+<b>Your intelligent companion for mindful digital habits</b>
 
 [![Platform](https://img.shields.io/badge/Platform-Android%207.0%2B-3DDC84?style=flat-square&logo=android)](https://developer.android.com)
 [![Language](https://img.shields.io/badge/Language-Java-007396?style=flat-square&logo=java)](https://www.java.com)
