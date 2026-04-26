@@ -60,7 +60,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f2d1a,100:020d07&height=64&text=%F0%9F%93%8B%20%20Table%20of%20Contents&fontSize=22&fontColor=dcfce7&fontAlignY=52&fontAlign=50" width="100%"/>
 
-<br/>
+---
 
 | # | Section | # | Section |
 |:---:|:---|:---:|:---|
@@ -70,6 +70,8 @@
 | 04 | [🔔 Break Reminder System](#2-intelligent-break-reminder-system) | 10 | [🤝 Contributing](#contributing) |
 | 05 | [📊 App Analytics](#3-comprehensive-app-analytics) | 11 | [🔐 Privacy & Security](#privacy-security) |
 | 06 | [🎯 App Limits & Alerts](#4-individual-app-limits) | 12 | [🗺️ Roadmap](#roadmap) |
+
+---
 
 <br/><br/>
 
