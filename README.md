@@ -42,9 +42,9 @@
 <!--  AT A GLANCE                                                            -->
 <!---------------------------------------------------------------------------->
 
-## 📊 &nbsp;At a Glance
-
 <div align="center">
+
+### 📊 &nbsp;At a Glance
 
 | 📱 Min SDK | 🏗️ Architecture | 💾 Database | ⚙️ Background | 🔒 Privacy | 🎨 UI |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -58,16 +58,22 @@
 <!--  TABLE OF CONTENTS                                                      -->
 <!---------------------------------------------------------------------------->
 
-## 📋 &nbsp;Table of Contents
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f2d1a,100:020d07&height=64&text=%F0%9F%93%8B%20%20Table%20of%20Contents&fontSize=22&fontColor=dcfce7&fontAlignY=52&fontAlign=50" width="100%"/>
+
+<br/>
+
+<div align="center">
 
 | # | Section | # | Section |
 |:---:|:---|:---:|:---|
-| 01 | [📖 About MinST](#about-minst) | 07 | [🏗️ Architecture](#architecture) |
-| 02 | [✨ Features](#features) | 08 | [🚀 Installation](#installation) |
-| 03 | [🎯 Accurate Usage Tracking](#1-accurate-real-time-usage-tracking) | 09 | [🎯 How It Works](#how-it-works) |
-| 04 | [🔔 Break Reminder System](#2-intelligent-break-reminder-system) | 10 | [🤝 Contributing](#contributing) |
-| 05 | [📊 App Analytics](#3-comprehensive-app-analytics) | 11 | [🔐 Privacy & Security](#privacy-security) |
-| 06 | [🎯 App Limits & Alerts](#4-individual-app-limits) | 12 | [🗺️ Roadmap](#roadmap) |
+| 01 | <a href="#about-minst">📖 About MinST</a> | 07 | <a href="#architecture">🏗️ Architecture</a> |
+| 02 | <a href="#features">✨ Features</a> | 08 | <a href="#installation">🚀 Installation</a> |
+| 03 | <a href="#1-accurate-real-time-usage-tracking">🎯 Accurate Usage Tracking</a> | 09 | <a href="#how-it-works">🎯 How It Works</a> |
+| 04 | <a href="#2-intelligent-break-reminder-system">🔔 Break Reminder System</a> | 10 | <a href="#contributing">🤝 Contributing</a> |
+| 05 | <a href="#3-comprehensive-app-analytics">📊 App Analytics</a> | 11 | <a href="#privacy-security">🔐 Privacy & Security</a> |
+| 06 | <a href="#4-individual-app-limits">🎯 App Limits & Alerts</a> | 12 | <a href="#roadmap">🗺️ Roadmap</a> |
+
+</div>
 
 <br/><br/>
 
@@ -75,6 +81,7 @@
 <!--  ABOUT                                                                  -->
 <!---------------------------------------------------------------------------->
 
+<a name="about-minst"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0a3d1e,100:021008&height=64&text=%F0%9F%93%96%20%20About%20MinST&fontSize=22&fontColor=86efac&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -101,9 +108,12 @@ MinST *(Minimize Screen Time)* is a sophisticated digital wellbeing application 
 <!--  FEATURES                                                               -->
 <!---------------------------------------------------------------------------->
 
+<a name="features"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e3800,100:040900&height=64&text=%E2%9C%A8%20%20Features&fontSize=22&fontColor=a3e635&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
+
+<a name="1-accurate-real-time-usage-tracking"></a>
 
 ### 🎯 1. Accurate Real-Time Usage Tracking
 
@@ -149,6 +159,8 @@ public static HashMap<String, ProcessedUsageStats> getProcessedUsageStats(
 <br/>
 
 ---
+
+<a name="2-intelligent-break-reminder-system"></a>
 
 ### 🔔 2. Intelligent Break Reminder System
 
@@ -214,6 +226,8 @@ private void updateOverlayTimer() {
 
 ---
 
+<a name="3-comprehensive-app-analytics"></a>
+
 ### 📊 3. Comprehensive App Analytics
 
 Each app gets a dedicated detail page with multi-dimensional insights.
@@ -241,6 +255,8 @@ Each app gets a dedicated detail page with multi-dimensional insights.
 <br/>
 
 ---
+
+<a name="4-individual-app-limits"></a>
 
 ### 🎯 4. Individual App Limits
 
@@ -442,6 +458,7 @@ graph LR
 <!--  ARCHITECTURE                                                           -->
 <!---------------------------------------------------------------------------->
 
+<a name="architecture"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e1060,100:04020f&height=64&text=%F0%9F%8F%97%EF%B8%8F%20%20Architecture&fontSize=22&fontColor=a5b4fc&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -608,6 +625,7 @@ public abstract class AppDatabase extends RoomDatabase {
 <!--  INSTALLATION                                                           -->
 <!---------------------------------------------------------------------------->
 
+<a name="installation"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0a3d28,100:010f06&height=64&text=%F0%9F%9A%80%20%20Installation&fontSize=22&fontColor=6ee7b7&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -678,6 +696,7 @@ cd MinST-Minimize-Screen-Time
 <!--  HOW IT WORKS                                                           -->
 <!---------------------------------------------------------------------------->
 
+<a name="how-it-works"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:2e1060,100:08020f&height=64&text=%F0%9F%8E%AF%20%20How%20It%20Works&fontSize=22&fontColor=c4b5fd&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -785,6 +804,7 @@ graph LR
 <!--  CONTRIBUTING                                                           -->
 <!---------------------------------------------------------------------------->
 
+<a name="contributing"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0a3d62,100:021018&height=64&text=%F0%9F%A4%9D%20%20Contributing&fontSize=22&fontColor=7dd3fc&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -857,6 +877,7 @@ git push origin feature/amazing-feature
 <!--  PRIVACY & SECURITY                                                     -->
 <!---------------------------------------------------------------------------->
 
+<a name="privacy-security"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:2a0040,100:07000f&height=64&text=%F0%9F%94%90%20%20Privacy%20%26%20Security&fontSize=22&fontColor=d8b4fe&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -902,6 +923,7 @@ MinST collects **only** the following data, stored **locally** on your device:
 <!--  ROADMAP                                                                -->
 <!---------------------------------------------------------------------------->
 
+<a name="roadmap"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:352000,100:080500&height=64&text=%F0%9F%97%BA%EF%B8%8F%20%20Roadmap&fontSize=22&fontColor=fcd34d&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
