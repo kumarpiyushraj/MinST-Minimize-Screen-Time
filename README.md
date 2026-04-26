@@ -77,11 +77,11 @@
 
 <br/><br/>
 
+<a name="about-minst"></a>
 <!---------------------------------------------------------------------------->
 <!--  ABOUT                                                                  -->
 <!---------------------------------------------------------------------------->
 
-<a name="about-minst"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0a3d1e,100:021008&height=64&text=%F0%9F%93%96%20%20About%20MinST&fontSize=22&fontColor=86efac&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -104,11 +104,11 @@ MinST *(Minimize Screen Time)* is a sophisticated digital wellbeing application 
 
 <br/><br/>
 
+<a name="features"></a>
 <!---------------------------------------------------------------------------->
 <!--  FEATURES                                                               -->
 <!---------------------------------------------------------------------------->
 
-<a name="features"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e3800,100:040900&height=64&text=%E2%9C%A8%20%20Features&fontSize=22&fontColor=a3e635&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -454,11 +454,11 @@ graph LR
 
 <br/><br/>
 
+<a name="architecture"></a>
 <!---------------------------------------------------------------------------->
 <!--  ARCHITECTURE                                                           -->
 <!---------------------------------------------------------------------------->
 
-<a name="architecture"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e1060,100:04020f&height=64&text=%F0%9F%8F%97%EF%B8%8F%20%20Architecture&fontSize=22&fontColor=a5b4fc&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -621,11 +621,11 @@ public abstract class AppDatabase extends RoomDatabase {
 
 <br/><br/>
 
+<a name="installation"></a>
 <!---------------------------------------------------------------------------->
 <!--  INSTALLATION                                                           -->
 <!---------------------------------------------------------------------------->
 
-<a name="installation"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0a3d28,100:010f06&height=64&text=%F0%9F%9A%80%20%20Installation&fontSize=22&fontColor=6ee7b7&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -692,11 +692,11 @@ cd MinST-Minimize-Screen-Time
 
 <br/><br/>
 
+<a name="how-it-works"></a>
 <!---------------------------------------------------------------------------->
 <!--  HOW IT WORKS                                                           -->
 <!---------------------------------------------------------------------------->
 
-<a name="how-it-works"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:2e1060,100:08020f&height=64&text=%F0%9F%8E%AF%20%20How%20It%20Works&fontSize=22&fontColor=c4b5fd&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -800,11 +800,11 @@ graph LR
 
 <br/><br/>
 
+<a name="contributing"></a>
 <!---------------------------------------------------------------------------->
 <!--  CONTRIBUTING                                                           -->
 <!---------------------------------------------------------------------------->
 
-<a name="contributing"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0a3d62,100:021018&height=64&text=%F0%9F%A4%9D%20%20Contributing&fontSize=22&fontColor=7dd3fc&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -873,11 +873,11 @@ git push origin feature/amazing-feature
 
 <br/><br/>
 
+<a name="privacy-security"></a>
 <!---------------------------------------------------------------------------->
 <!--  PRIVACY & SECURITY                                                     -->
 <!---------------------------------------------------------------------------->
 
-<a name="privacy-security"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:2a0040,100:07000f&height=64&text=%F0%9F%94%90%20%20Privacy%20and%20Security&fontSize=22&fontColor=d8b4fe&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
@@ -919,11 +919,11 @@ MinST collects **only** the following data, stored **locally** on your device:
 
 <br/><br/>
 
+<a name="roadmap"></a>
 <!---------------------------------------------------------------------------->
 <!--  ROADMAP                                                                -->
 <!---------------------------------------------------------------------------->
 
-<a name="roadmap"></a>
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:352000,100:080500&height=64&text=%F0%9F%97%BA%EF%B8%8F%20%20Roadmap&fontSize=22&fontColor=fcd34d&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
