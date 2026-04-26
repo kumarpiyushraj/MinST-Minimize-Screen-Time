@@ -62,8 +62,6 @@
 
 <br/>
 
-<div align="center">
-
 | # | Section | # | Section |
 |:---:|:---|:---:|:---|
 | 01 | [📖 About MinST](#about-minst) | 07 | [🏗️ Architecture](#architecture) |
@@ -72,8 +70,6 @@
 | 04 | [🔔 Break Reminder System](#2-intelligent-break-reminder-system) | 10 | [🤝 Contributing](#contributing) |
 | 05 | [📊 App Analytics](#3-comprehensive-app-analytics) | 11 | [🔐 Privacy & Security](#privacy-security) |
 | 06 | [🎯 App Limits & Alerts](#4-individual-app-limits) | 12 | [🗺️ Roadmap](#roadmap) |
-
-</div>
 
 <br/><br/>
 
