@@ -1042,13 +1042,7 @@ MinST collects **only** the following data, stored **locally** on your device:
 
 <br/>
 
-*© 2024 Kumar Piyush Raj &nbsp;·&nbsp; [GitHub @kumarpiyushraj](https://github.com/kumarpiyushraj)*
-
-<br/>
-
-[Back to Top](#minst---minimize-screen-time)
-
-<br/>
+*© 2025 Kumar Piyush Raj &nbsp;·&nbsp; [GitHub @kumarpiyushraj](https://github.com/kumarpiyushraj)*
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4ade80,40:16a34a,70:063d2b,100:020d1f&height=160&section=footer" width="100%"/>
 
