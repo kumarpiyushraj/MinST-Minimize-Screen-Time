@@ -878,7 +878,7 @@ git push origin feature/amazing-feature
 <!---------------------------------------------------------------------------->
 
 <a name="privacy-security"></a>
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2a0040,100:07000f&height=64&text=%F0%9F%94%90%20%20Privacy%20%26%20Security&fontSize=22&fontColor=d8b4fe&fontAlignY=52&fontAlign=50" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2a0040,100:07000f&height=64&text=%F0%9F%94%90%20%20Privacy%20and%20Security&fontSize=22&fontColor=d8b4fe&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
 
@@ -984,40 +984,6 @@ MinST collects **only** the following data, stored **locally** on your device:
 <br/><br/>
 
 <!---------------------------------------------------------------------------->
-<!--  LICENSE                                                                -->
-<!---------------------------------------------------------------------------->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:050505&height=64&text=%F0%9F%93%84%20%20License&fontSize=22&fontColor=e2e8f0&fontAlignY=52&fontAlign=50" width="100%"/>
-
-<br/>
-
-```
-MIT License
-
-Copyright (c) 2024 Kumar Piyush Raj
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-<br/><br/>
-
-<!---------------------------------------------------------------------------->
 <!--  ACKNOWLEDGMENTS                                                        -->
 <!---------------------------------------------------------------------------->
 
@@ -1042,7 +1008,7 @@ SOFTWARE.
 <!--  CONTACT                                                                -->
 <!---------------------------------------------------------------------------->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f2d1a,100:020d07&height=64&text=%F0%9F%93%9E%20%20Contact%20%26%20Support&fontSize=22&fontColor=dcfce7&fontAlignY=52&fontAlign=50" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f2d1a,100:020d07&height=64&text=%F0%9F%93%9E%20%20Contact%20and%20Support&fontSize=22&fontColor=dcfce7&fontAlignY=52&fontAlign=50" width="100%"/>
 
 <br/>
 
@@ -1066,7 +1032,7 @@ SOFTWARE.
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4ade80,40:16a34a,70:063d2b,100:020d1f&height=160&section=footer" width="100%"/>
+<br/>
 
 **Built with ❤️ for mindful living &nbsp;·&nbsp; Java &nbsp;·&nbsp; Android &nbsp;·&nbsp; Material Design 3**
 
@@ -1078,6 +1044,12 @@ SOFTWARE.
 
 *© 2024 Kumar Piyush Raj &nbsp;·&nbsp; [GitHub @kumarpiyushraj](https://github.com/kumarpiyushraj)*
 
+<br/>
+
 [Back to Top](#minst---minimize-screen-time)
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4ade80,40:16a34a,70:063d2b,100:020d1f&height=160&section=footer" width="100%"/>
 
 </div>
