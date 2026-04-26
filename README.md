@@ -66,12 +66,12 @@
 
 | # | Section | # | Section |
 |:---:|:---|:---:|:---|
-| 01 | [📖 About MinST](#-about-minst) | 07 | [🏗️ Architecture](#-architecture) |
-| 02 | [✨ Features](#-features) | 08 | [🚀 Installation](#-installation) |
-| 03 | [🎯 Accurate Usage Tracking](#1-accurate-real-time-usage-tracking) | 09 | [🎯 How It Works](#-how-it-works) |
-| 04 | [🔔 Break Reminder System](#2-intelligent-break-reminder-system) | 10 | [🤝 Contributing](#-contributing) |
-| 05 | [📊 App Analytics](#3-comprehensive-app-analytics) | 11 | [🔐 Privacy & Security](#-privacy--security) |
-| 06 | [🎯 App Limits & Alerts](#4-individual-app-limits) | 12 | [🗺️ Roadmap](#-roadmap) |
+| 01 | [📖 About MinST](#about-minst) | 07 | [🏗️ Architecture](#architecture) |
+| 02 | [✨ Features](#features) | 08 | [🚀 Installation](#installation) |
+| 03 | [🎯 Accurate Usage Tracking](#1-accurate-real-time-usage-tracking) | 09 | [🎯 How It Works](#how-it-works) |
+| 04 | [🔔 Break Reminder System](#2-intelligent-break-reminder-system) | 10 | [🤝 Contributing](#contributing) |
+| 05 | [📊 App Analytics](#3-comprehensive-app-analytics) | 11 | [🔐 Privacy & Security](#privacy-security) |
+| 06 | [🎯 App Limits & Alerts](#4-individual-app-limits) | 12 | [🗺️ Roadmap](#roadmap) |
 
 </div>
 
@@ -964,6 +964,40 @@ MinST collects **only** the following data, stored **locally** on your device:
 > MinST is a digital wellbeing tool designed to assist users in managing their screen time. It is **not a replacement** for professional help if you're struggling with technology addiction. For serious concerns, please consult a mental health professional.
 >
 > The app requires sensitive permissions to function properly. All data is stored locally and never transmitted without explicit consent. Review the [Privacy Policy](#-privacy--security) for complete details.
+
+<br/><br/>
+
+<!---------------------------------------------------------------------------->
+<!--  LICENSE                                                                -->
+<!---------------------------------------------------------------------------->
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:050505&height=64&text=%F0%9F%93%84%20%20License&fontSize=22&fontColor=e2e8f0&fontAlignY=52&fontAlign=50" width="100%"/>
+
+<br/>
+
+```
+MIT License
+
+Copyright (c) 2024 Kumar Piyush Raj
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 <br/><br/>
 
