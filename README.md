@@ -1018,7 +1018,7 @@ MinST collects **only** the following data, stored **locally** on your device:
 
 <br/>
 
-[![GitHub Issues](https://img.shields.io/badge/Issues-Report%20Bug-red?style=for-the-badge&logo=github)](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/issues)&nbsp;
+[![GitHub Issues](https://img.shields.io/badge/Issues-Report%20Bug-red?style=for-the-badge&logo=github)](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/issues/new)&nbsp;
 [![GitHub Discussions](https://img.shields.io/badge/Discussions-Ask%20Question-blue?style=for-the-badge&logo=github)](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/discussions)&nbsp;
 [![Email](https://img.shields.io/badge/Email-Contact%20Developer-green?style=for-the-badge&logo=gmail)](mailto:kmpiyushraj@gmail.com)
 
@@ -1038,7 +1038,7 @@ MinST collects **only** the following data, stored **locally** on your device:
 
 <br/>
 
-[![Star this repo](https://img.shields.io/github/stars/kumarpiyushraj/MinST-Minimize-Screen-Time?style=for-the-badge&logo=github&color=fbbf24&labelColor=0d1117&label=Star%20this%20repo)](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time)
+[![Star this repo](https://img.shields.io/github/stars/kumarpiyushraj/MinST-Minimize-Screen-Time?style=for-the-badge&logo=github&color=fbbf24&labelColor=0d1117&label=Star%20this%20repo)](https://github.com/kumarpiyushraj/MinST-Minimize-Screen-Time/stargazers)
 
 <br/>
 
